@@ -1,0 +1,111 @@
+import type { Quiz } from "@/lib/quiz-data"
+
+export const mongodbQuiz: Quiz =   {
+  id: 1,
+  slug: "mongodb",
+  title: "MongoDB",
+  description: "Teste seus conhecimentos sobre conceitos, operações e melhores práticas do MongoDB.",
+  timeLimit: 12,
+  questions: [
+    {
+      id: 1,
+      question: "Qual é o modelo de armazenamento utilizado pelo MongoDB?",
+      options: [
+        "Relacional (tabelas e linhas)",
+        "Orientado a documentos (BSON)",
+        "Chave-valor simples",
+        "Orientado a colunas",
+      ],
+      correctAnswer: 1,
+      correctLetter: "B",
+    },
+    // {
+    //   id: 6,
+    //   question: "Qual é a finalidade do operador $lookup no MongoDB?",
+    //   options: [
+    //     "Para validar documentos durante a inserção",
+    //     "Para criar índices compostos",
+    //     "Para realizar operações semelhantes a JOIN em SQL",
+    //     "Para calcular estatísticas agregadas",
+    //   ],
+    //   correctAnswer: 2,
+    //   correctLetter: "C",
+    // },
+    // {
+    //   id: 3,
+    //   question: "Qual comando é usado para inserir um documento em uma coleção?",
+    //   options: ["db.collection.add()", "db.collection.insert()", "db.collection.update()", "db.collection.put()"],
+    //   correctAnswer: 1,
+    //   correctLetter: "B",
+    // },
+    // {
+    //   id: 8,
+    //   question: "O que é sharding no MongoDB?",
+    //   options: [
+    //     "Um método de criptografia de dados",
+    //     "Um processo de backup automático",
+    //     "Uma técnica para distribuir dados entre múltiplos servidores",
+    //     "Um tipo especial de índice para consultas rápidas",
+    //   ],
+    //   correctAnswer: 2,
+    //   correctLetter: "C",
+    // },
+    // {
+    //   id: 2,
+    //   question: "Em MongoDB, o que é uma 'collection'?",
+    //   options: [
+    //     "Um único documento JSON",
+    //     "O equivalente a uma linha em bancos de dados relacionais",
+    //     "O equivalente a uma tabela em bancos de dados relacionais",
+    //     "Um servidor de banco de dados",
+    //   ],
+    //   correctAnswer: 2,
+    //   correctLetter: "C",
+    // },
+    // {
+    //   id: 9,
+    //   question: "Qual é a diferença entre update() e updateOne() no MongoDB?",
+    //   options: [
+    //     "update() atualiza apenas um campo, updateOne() atualiza vários campos",
+    //     "update() pode atualizar múltiplos documentos por padrão, updateOne() atualiza apenas um",
+    //     "update() é mais rápido, updateOne() é mais seguro",
+    //     "Não há diferença, são sinônimos",
+    //   ],
+    //   correctAnswer: 1,
+    //   correctLetter: "B",
+    // },
+    // {
+    //   id: 4,
+    //   question: "Qual operador é usado para consultar valores em um intervalo no MongoDB?",
+    //   options: ["$between", "$range", "$in", "$gt e $lt"],
+    //   correctAnswer: 3,
+    //   correctLetter: "D",
+    // },
+    // {
+    //   id: 10,
+    //   question: "Qual operador é usado para projetar apenas campos específicos em uma consulta MongoDB?",
+    //   options: ["$select", "$project", "$fields", "$include"],
+    //   correctAnswer: 1,
+    //   correctLetter: "B",
+    // },
+    // {
+    //   id: 7,
+    //   question: "Qual é o limite máximo de tamanho para um único documento no MongoDB?",
+    //   options: ["1 MB", "16 MB", "64 MB", "Sem limite fixo"],
+    //   correctAnswer: 1,
+    //   correctLetter: "B",
+    // },
+    // {
+    //   id: 5,
+    //   question: "O que é um índice no MongoDB?",
+    //   options: [
+    //     "Uma estrutura de dados que melhora a velocidade das operações de consulta",
+    //     "Um tipo especial de documento que referencia outros documentos",
+    //     "Uma ferramenta de backup de dados",
+    //     "Um tipo de autenticação de usuário",
+    //   ],
+    //   correctAnswer: 0,
+    //   correctLetter: "A",
+    // },
+  ],
+}
