@@ -1,13 +1,8 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { WelcomePageProps } from "@/utils/interfaces"
 
-interface WelcomePageProps {
-  quizTitle: string
-  timeLimit: number
-  onStart: () => void
-  onBack: () => void
-}
 
 export default function WelcomePage({ quizTitle, timeLimit, onStart, onBack }: WelcomePageProps) {
   return (

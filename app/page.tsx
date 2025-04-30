@@ -26,7 +26,9 @@ export default function HomePage() {
       <div className="w-full max-w-4xl">
         <h1 className="text-4xl font-bold text-center mb-8 text-orange-500">Central de Quizzes</h1>
         <p className="text-xl text-center mb-12">Selecione um quiz para testar seu conhecimento</p>
-
+        <Button variant="outline" className="mb-8 bg-orange-500 hover:bg-orange-600 text-white" asChild>
+          <a href="/scores">Ver Pontuações</a>
+        </Button>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {quizzes.map((quiz) => (
             <QuizCard

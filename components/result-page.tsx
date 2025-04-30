@@ -1,15 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import type { QuizQuestion } from "@/lib/quiz-data"
-
-interface ResultPageProps {
-  quizTitle: string
-  score: number
-  questions: QuizQuestion[]
-  onRestart: () => void
-  onHome: () => void
-}
+import { ResultPageProps } from "@/utils/interfaces"
 
 export default function ResultPage({ quizTitle, score, questions, onRestart, onHome }: ResultPageProps) {
   const isPassing = score >= 25

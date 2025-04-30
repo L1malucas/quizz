@@ -1,13 +1,12 @@
-import type { Quiz } from "@/lib/quiz-data"
+import { Quiz } from "@/utils/interfaces";
 
 export const domQuiz: Quiz = {
   id: 1,
-  slug: "mongodb",
+  slug: "dom",
   title: "DOM",
   description: "Teste seu conhecimento sobre conceitos, operações e melhores práticas do DOM.",
   timeLimit: 12,
   questions: [
-    // Basic Questions (20)
     {
       "id": 1,
       "question": "O que é o DOM em JavaScript?",

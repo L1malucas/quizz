@@ -2,21 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
-import type { QuizQuestion } from "@/lib/quiz-data"
-
-interface QuizPageProps {
-  quizTitle: string
-  questions: QuizQuestion[]
-  currentQuestion: number
-  selectedAnswers: number[]
-  timer: number
-  setTimer: (value: number | ((prevTimer: number) => number)) => void
-  isPaused: boolean
-  onAnswer: (optionIndex: number) => void
-  onNext: () => void
-  onTogglePause: () => void
-  onQuit: () => void
-}
+import { QuizPageProps } from "@/utils/interfaces"
 
 export default function QuizPage({
   quizTitle,
@@ -78,7 +64,7 @@ export default function QuizPage({
           <h1 className="text-2xl font-bold text-orange-500">{quizTitle}</h1>
           <div className="flex items-center gap-4">
             <Button onClick={onQuit} variant="destructive" className="px-4 py-2">
-              Sair do Teste
+              Sair
             </Button>
             <Button
               onClick={onTogglePause}
@@ -113,15 +99,13 @@ export default function QuizPage({
               <div
                 key={index}
                 onClick={() => onAnswer(index)}
-                className={`p-4 border border-gray-700 rounded-lg cursor-pointer transition-colors duration-200 hover:bg-gray-800 ${
-                  selectedAnswers[currentQuestion] === index ? "border-orange-500 bg-gray-800" : ""
-                }`}
+                className={`p-4 border border-gray-700 rounded-lg cursor-pointer transition-colors duration-200 hover:bg-gray-800 ${selectedAnswers[currentQuestion] === index ? "border-orange-500 bg-gray-800" : ""
+                  }`}
               >
                 <div className="flex items-center">
                   <div
-                    className={`w-5 h-5 mr-3 rounded-full border ${
-                      selectedAnswers[currentQuestion] === index ? "border-orange-500 bg-orange-500" : "border-gray-500"
-                    }`}
+                    className={`w-5 h-5 mr-3 rounded-full border ${selectedAnswers[currentQuestion] === index ? "border-orange-500 bg-orange-500" : "border-gray-500"
+                      }`}
                   >
                     {selectedAnswers[currentQuestion] === index && (
                       <div className="flex items-center justify-center h-full">
@@ -141,11 +125,10 @@ export default function QuizPage({
           <Button
             onClick={onNext}
             disabled={selectedAnswers[currentQuestion] === null}
-            className={`px-6 py-3 rounded-lg font-semibold ${
-              selectedAnswers[currentQuestion] !== null
-                ? "bg-orange-500 hover:bg-orange-600 text-white"
-                : "bg-gray-700 text-gray-400 cursor-not-allowed"
-            }`}
+            className={`px-6 py-3 rounded-lg font-semibold ${selectedAnswers[currentQuestion] !== null
+              ? "bg-orange-500 hover:bg-orange-600 text-white"
+              : "bg-gray-700 text-gray-400 cursor-not-allowed"
+              }`}
           >
             {currentQuestion < questions.length - 1 ? "Próxima" : "Finalizar"}
           </Button>

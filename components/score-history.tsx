@@ -3,16 +3,8 @@
 import { useEffect, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { QuizScore, ScoreHistoryProps } from "@/utils/interfaces"
 
-interface QuizScore {
-  score: number
-  date: string
-  title: string
-}
-
-interface ScoreHistoryProps {
-  onClose: () => void
-}
 
 export default function ScoreHistory({ onClose }: ScoreHistoryProps) {
   const [scores, setScores] = useState<Record<string, QuizScore>>({})
@@ -74,13 +66,12 @@ export default function ScoreHistory({ onClose }: ScoreHistoryProps) {
                   <div className="flex justify-between items-center mb-2">
                     <h3 className="font-semibold text-lg">{scoreData.title}</h3>
                     <span
-                      className={`text-lg font-bold ${
-                        scoreData.score >= 70
+                      className={`text-lg font-bold ${scoreData.score >= 70
                           ? "text-green-500"
                           : scoreData.score >= 50
                             ? "text-yellow-500"
                             : "text-red-500"
-                      }`}
+                        }`}
                     >
                       {scoreData.score}%
                     </span>

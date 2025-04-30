@@ -5,12 +5,8 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowLeft, Trophy } from "lucide-react"
+import { QuizScore } from "@/utils/interfaces"
 
-interface QuizScore {
-  score: number
-  date: string
-  title: string
-}
 
 export default function ScoresPage() {
   const router = useRouter()
@@ -87,25 +83,23 @@ export default function ScoresPage() {
                         <p className="text-sm text-gray-400 mb-1">Realizado em: {formatDate(scoreData.date)}</p>
                         <div className="w-full bg-gray-700 h-2 rounded-full mt-2">
                           <div
-                            className={`h-2 rounded-full ${
-                              scoreData.score >= 70
+                            className={`h-2 rounded-full ${scoreData.score >= 70
                                 ? "bg-green-500"
                                 : scoreData.score >= 50
                                   ? "bg-yellow-500"
                                   : "bg-red-500"
-                            }`}
+                              }`}
                             style={{ width: `${scoreData.score}%` }}
                           ></div>
                         </div>
                       </div>
                       <span
-                        className={`text-2xl font-bold ${
-                          scoreData.score >= 70
+                        className={`text-2xl font-bold ${scoreData.score >= 70
                             ? "text-green-500"
                             : scoreData.score >= 50
                               ? "text-yellow-500"
                               : "text-red-500"
-                        }`}
+                          }`}
                       >
                         {scoreData.score}%
                       </span>
