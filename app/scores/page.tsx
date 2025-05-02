@@ -7,7 +7,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowLeft, Trophy } from "lucide-react"
 import { QuizScore } from "@/utils/interfaces"
 
-
 export default function ScoresPage() {
   const router = useRouter()
   const [scores, setScores] = useState<Record<string, QuizScore>>({})
@@ -54,7 +53,7 @@ export default function ScoresPage() {
             <ArrowLeft className="h-5 w-5 mr-2" />
             Voltar
           </Button>
-          <h1 className="text-3xl font-bold text-orange-500">Histórico de Pontuações</h1>
+          <h1 className="text-3xl font-bold text-purple-500">Histórico de Pontuações</h1>
         </div>
 
         {isLoading ? (
@@ -84,10 +83,10 @@ export default function ScoresPage() {
                         <div className="w-full bg-gray-700 h-2 rounded-full mt-2">
                           <div
                             className={`h-2 rounded-full ${scoreData.score >= 70
-                                ? "bg-green-500"
-                                : scoreData.score >= 50
-                                  ? "bg-yellow-500"
-                                  : "bg-red-500"
+                              ? "bg-green-500"
+                              : scoreData.score >= 50
+                                ? "bg-yellow-500"
+                                : "bg-red-500"
                               }`}
                             style={{ width: `${scoreData.score}%` }}
                           ></div>
@@ -95,10 +94,10 @@ export default function ScoresPage() {
                       </div>
                       <span
                         className={`text-2xl font-bold ${scoreData.score >= 70
-                            ? "text-green-500"
-                            : scoreData.score >= 50
-                              ? "text-yellow-500"
-                              : "text-red-500"
+                          ? "text-green-500"
+                          : scoreData.score >= 50
+                            ? "text-yellow-500"
+                            : "text-red-500"
                           }`}
                       >
                         {scoreData.score}%

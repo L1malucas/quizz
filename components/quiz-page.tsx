@@ -61,7 +61,7 @@ export default function QuizPage({
     <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black">
       <div className="w-full max-w-4xl p-6 bg-zinc-900 rounded-lg shadow-lg">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold text-orange-500">{quizTitle}</h1>
+          <h1 className="text-2xl font-bold text-purple-500">{quizTitle}</h1>
           <div className="flex items-center gap-4">
             <Button onClick={onQuit} variant="destructive" className="px-4 py-2">
               Sair
@@ -85,7 +85,7 @@ export default function QuizPage({
           </div>
           <div className="w-full bg-gray-700 h-2 rounded-full">
             <div
-              className="bg-orange-500 h-2 rounded-full"
+              className="bg-purple-500 h-2 rounded-full"
               style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
             ></div>
           </div>
@@ -99,12 +99,12 @@ export default function QuizPage({
               <div
                 key={index}
                 onClick={() => onAnswer(index)}
-                className={`p-4 border border-gray-700 rounded-lg cursor-pointer transition-colors duration-200 hover:bg-gray-800 ${selectedAnswers[currentQuestion] === index ? "border-orange-500 bg-gray-800" : ""
+                className={`p-4 border border-gray-700 rounded-lg cursor-pointer transition-colors duration-200 hover:bg-gray-800 ${selectedAnswers[currentQuestion] === index ? "border-purple-500 bg-gray-800" : ""
                   }`}
               >
                 <div className="flex items-center">
                   <div
-                    className={`w-5 h-5 mr-3 rounded-full border ${selectedAnswers[currentQuestion] === index ? "border-orange-500 bg-orange-500" : "border-gray-500"
+                    className={`w-5 h-5 mr-3 rounded-full border ${selectedAnswers[currentQuestion] === index ? "border-purple-500 bg-purple-500" : "border-gray-500"
                       }`}
                   >
                     {selectedAnswers[currentQuestion] === index && (
@@ -126,7 +126,7 @@ export default function QuizPage({
             onClick={onNext}
             disabled={selectedAnswers[currentQuestion] === null}
             className={`px-6 py-3 rounded-lg font-semibold ${selectedAnswers[currentQuestion] !== null
-              ? "bg-orange-500 hover:bg-orange-600 text-white"
+              ? "bg-purple-500 hover:bg-purple-600 text-white"
               : "bg-gray-700 text-gray-400 cursor-not-allowed"
               }`}
           >

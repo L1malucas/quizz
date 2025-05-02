@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { QuizScore, ScoreHistoryProps } from "@/utils/interfaces"
 
-
 export default function ScoreHistory({ onClose }: ScoreHistoryProps) {
   const [scores, setScores] = useState<Record<string, QuizScore>>({})
   const [isLoading, setIsLoading] = useState(true)
@@ -48,7 +47,7 @@ export default function ScoreHistory({ onClose }: ScoreHistoryProps) {
       <Card className="w-full max-w-2xl bg-zinc-900 border-gray-700">
         <CardHeader>
           <div className="flex justify-between items-center">
-            <CardTitle className="text-2xl text-orange-500">Histórico de Pontuações</CardTitle>
+            <CardTitle className="text-2xl text-purple-500">Histórico de Pontuações</CardTitle>
             <Button variant="ghost" onClick={onClose} className="text-gray-400 hover:text-white">
               Fechar
             </Button>
@@ -67,10 +66,10 @@ export default function ScoreHistory({ onClose }: ScoreHistoryProps) {
                     <h3 className="font-semibold text-lg">{scoreData.title}</h3>
                     <span
                       className={`text-lg font-bold ${scoreData.score >= 70
-                          ? "text-green-500"
-                          : scoreData.score >= 50
-                            ? "text-yellow-500"
-                            : "text-red-500"
+                        ? "text-green-500"
+                        : scoreData.score >= 50
+                          ? "text-yellow-500"
+                          : "text-red-500"
                         }`}
                     >
                       {scoreData.score}%

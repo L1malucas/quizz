@@ -1,9 +1,13 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ResultPageProps } from "@/utils/interfaces"
+import UsernameModal from "./username-modal"
 
-export default function ResultPage({ quizTitle, score, questions, onRestart, onHome }: ResultPageProps) {
+
+export default function ResultPage({ quizTitle, score, questions, onRestart, onHome, quizId }: ResultPageProps) {
+  const [showUsernameModal, setShowUsernameModal] = useState(true)
   const isPassing = score >= 25
 
   // Generate answer key
@@ -18,7 +22,7 @@ export default function ResultPage({ quizTitle, score, questions, onRestart, onH
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black">
       <div className="w-full max-w-2xl p-8 bg-zinc-900 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold mb-6 text-orange-500 text-center">{quizTitle} - Resultado</h1>
+        <h1 className="text-3xl font-bold mb-6 text-purple-500 text-center">{quizTitle} - Resultado</h1>
 
         <p className="text-xl mb-4 text-center">
           Sua pontuação total no teste "{quizTitle}" foi de {score}%.
@@ -37,8 +41,8 @@ export default function ResultPage({ quizTitle, score, questions, onRestart, onH
           </p>
         )}
 
-        {/* <div className="mb-8 bg-zinc-800 p-4 rounded-lg">
-          <h2 className="text-lg font-semibold mb-3 text-orange-400">Gabarito:</h2>
+        <div className="mb-8 bg-zinc-800 p-4 rounded-lg">
+          <h2 className="text-lg font-semibold mb-3 text-purple-400">Gabarito:</h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
             {answerKey.map((answer, index) => (
               <div key={index} className="text-center p-1 bg-zinc-700 rounded">
@@ -46,25 +50,41 @@ export default function ResultPage({ quizTitle, score, questions, onRestart, onH
               </div>
             ))}
           </div>
-        </div> */}
+        </div>
 
         <div className="flex gap-4">
           <Button
             onClick={onHome}
             variant="outline"
-            className="w-1/2 px-6 py-3 border-gray-700 text-white hover:bg-zinc-800"
+            className="w-1/3 px-6 py-3 border-gray-700 text-white hover:bg-zinc-800"
           >
-            Voltar para Home
+            Home
           </Button>
 
           <Button
             onClick={onRestart}
-            className="w-1/2 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+            className="w-1/3 px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white font-semibold"
           >
-            Refazer Teste
+            Refazer
+          </Button>
+
+          <Button
+            onClick={() => setShowUsernameModal(true)}
+            className="w-1/3 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold"
+          >
+            Ranking
           </Button>
         </div>
       </div>
+
+      {showUsernameModal && (
+        <UsernameModal
+          quizId={quizId}
+          quizTitle={quizTitle}
+          score={score}
+          onClose={() => setShowUsernameModal(false)}
+        />
+      )}
     </div>
   )
 }

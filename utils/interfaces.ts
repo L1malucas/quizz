@@ -62,3 +62,31 @@ export interface Quiz {
   timeLimit: number 
   questions: QuizQuestion[]
 }
+
+export interface ResultPageProps {
+  quizTitle: string
+  score: number
+  questions: QuizQuestion[]
+  onRestart: () => void
+  onHome: () => void
+  quizId: string
+}
+
+export interface UsernameModalProps {
+  quizId: string
+  quizTitle: string
+  score: number
+  onClose: () => void
+  questionsAnswered?: number
+  correctAnswers?: number
+}
+
+export interface QuizScore {
+  score: number
+  date: string
+  title: string
+}
+
+export interface ScoreHistoryProps {
+  onClose: () => void
+}

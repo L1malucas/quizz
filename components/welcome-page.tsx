@@ -8,10 +8,10 @@ export default function WelcomePage({ quizTitle, timeLimit, onStart, onBack }: W
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black">
       <div className="w-full max-w-2xl p-8 bg-zinc-900 rounded-lg shadow-lg">
-        <h1 className="text-4xl font-bold text-center mb-6 text-orange-500">{quizTitle}</h1>
+        <h1 className="text-4xl font-bold text-center mb-6 text-purple-500">{quizTitle}</h1>
 
         <div className="mb-6">
-          <h2 className="text-xl font-semibold mb-2 text-orange-400">Duração</h2>
+          <h2 className="text-xl font-semibold mb-2 text-purple-400">Duração</h2>
           <p className="mb-4">
             {timeLimit} minutos (Você pode pausar o teste entre questões; Não é possível retornar a questões anteriores)
           </p>
@@ -37,7 +37,7 @@ export default function WelcomePage({ quizTitle, timeLimit, onStart, onBack }: W
             Voltar
           </Button>
 
-          <Button onClick={onStart} className="w-2/3 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold">
+          <Button onClick={onStart} className="w-2/3 py-3 bg-purple-500 hover:bg-purple-600 text-white font-semibold">
             Iniciar Teste
           </Button>
         </div>

@@ -24,10 +24,10 @@ export default function QuizCard({ title, description, icon, questionsCount, tim
     }
   }, [])
   return (
-    <Card className="bg-zinc-900 border-gray-700 hover:border-orange-500 transition-all">
+    <Card className="bg-zinc-900 border-gray-700 hover:border-purple-500 transition-all">
       <CardHeader>
         <div className="flex justify-between items-center">
-          <CardTitle className="text-orange-500">{title}</CardTitle>
+          <CardTitle className="text-purple-500">{title}</CardTitle>
           {icon}
         </div>
         <CardDescription>{description}</CardDescription>
@@ -45,7 +45,7 @@ export default function QuizCard({ title, description, icon, questionsCount, tim
       </CardContent>
       <CardFooter>
         <Link href={`/quiz/${slug}`} className="w-full">
-          <Button className="w-full bg-orange-500 hover:bg-orange-600">Iniciar Quiz</Button>
+          <Button className="w-full bg-purple-500 hover:bg-purple-600">Iniciar Quiz</Button>
         </Link>
       </CardFooter>
     </Card>

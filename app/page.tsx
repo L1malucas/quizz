@@ -1,34 +1,55 @@
 import type React from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Database, Code, FileText, Layout, CodeXml } from "lucide-react"
 import { quizzes } from "@/lib/quiz-data"
 import QuizCard from "@/components/quiz-card"
+import { getQuizIcon } from "@/lib/get-icons"
+import Link from "next/link"
+import { Sparkles } from "lucide-react"
 
 export default function HomePage() {
-  const getQuizIcon = (slug: string) => {
-    switch (slug) {
-      case "mongodb":
-        return <Database className="h-8 w-8 text-orange-500" />
-      case "html":
-        return <FileText className="h-8 w-8 text-orange-500" />
-      case "css":
-        return <Layout className="h-8 w-8 text-orange-500" />
-      case "dom":
-        return <Code className="h-8 w-8 text-orange-500" />
-      default:
-        return <CodeXml className="h-8 w-8 text-orange-500" />
-    }
-  }
-
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-4">
       <div className="w-full max-w-4xl">
-        <h1 className="text-4xl font-bold text-center mb-8 text-orange-500">Central de Quizzes</h1>
+        <br /><br /><br /><br />
         <p className="text-xl text-center mb-12">Selecione um quiz para testar seu conhecimento</p>
-        <Button variant="outline" className="mb-8 bg-orange-500 hover:bg-orange-600 text-white" asChild>
+        {/* <Button variant="outline" className="mb-8 bg-purple-500 hover:bg-purple-600 text-white" asChild>
           <a href="/scores">Ver Pontuações</a>
-        </Button>
+        </Button> */}
+        <div className="mb-8">
+          <Card className="bg-gradient-to-r from-zinc-900 to-zinc-800 border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all">
+            <CardHeader>
+              <div className="flex justify-between items-center">
+                <CardTitle className="text-purple-400">Modo Desafio IA</CardTitle>
+                <Sparkles className="h-8 w-8 text-purple-400" />
+              </div>
+              <CardDescription className="text-gray-300">
+                Teste seus limites com questões geradas por IA. O quiz continua até você cometer 3 erros.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex justify-between text-sm mb-2">
+                <span className="text-gray-400">Dificuldade:</span>
+                <span className="text-purple-400">Adaptativa</span>
+              </div>
+              <div className="flex justify-between text-sm mb-2">
+                <span className="text-gray-400">Questões:</span>
+                <span>Ilimitadas</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-400">Tempo Limite:</span>
+                <span>Nenhum</span>
+              </div>
+            </CardContent>
+            <CardFooter>
+              <p>Em breve...</p>
+              {/* <Link href="/ai-quiz" className="w-full">
+                <Button className="w-full bg-purple-600 hover:bg-purple-700">Iniciar Desafio IA</Button>
+              </Link> */}
+            </CardFooter>
+          </Card>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {quizzes.map((quiz) => (
             <QuizCard
