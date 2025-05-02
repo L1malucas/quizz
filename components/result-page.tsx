@@ -5,12 +5,22 @@ import { Button } from "@/components/ui/button"
 import { ResultPageProps } from "@/utils/interfaces"
 import UsernameModal from "./username-modal"
 
-
-export default function ResultPage({ quizTitle, score, questions, onRestart, onHome, quizId }: ResultPageProps) {
+export default function ResultPage({
+  quizTitle,
+  score,
+  questions,
+  onRestart,
+  onHome,
+  quizId
+}: ResultPageProps) {
   const [showUsernameModal, setShowUsernameModal] = useState(true)
   const isPassing = score >= 25
 
-  // Generate answer key
+  const questionsAnswered = questions.length
+
+
+  const correctAnswers = Math.round((score / 100) * questionsAnswered)
+
   const generateAnswerKey = () => {
     return questions.map((q, index) => {
       return `${index + 1}. ${q.correctLetter}`
@@ -83,6 +93,8 @@ export default function ResultPage({ quizTitle, score, questions, onRestart, onH
           quizTitle={quizTitle}
           score={score}
           onClose={() => setShowUsernameModal(false)}
+          questionsAnswered={questionsAnswered}
+          correctAnswers={correctAnswers}
         />
       )}
     </div>

@@ -1,7 +1,7 @@
 import { Quiz } from "@/utils/interfaces";
 
 export const typescriptQuiz: Quiz = {
-  id: 2,
+  id: 7,
   slug: "typescript",
   title: "TypeScript",
   description: "Teste seus conhecimentos sobre TypeScript, incluindo conceitos básicos, intermediários e avançados.",

@@ -1,7 +1,7 @@
 import { Quiz } from "@/utils/interfaces";
 
 export const csharpDotnetQuiz: Quiz = {
-  id: 5,
+  id: 11,
   slug: "csharp-dotnet",
   title: "C# e .NET",
   description: "Teste seus conhecimentos sobre C# e .NET, abrangendo conceitos básicos, intermediários e avançados.",

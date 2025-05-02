@@ -1,7 +1,7 @@
 import { Quiz } from "@/utils/interfaces";
 
 export const cssQuiz: Quiz = {
-  id: 1,
+  id: 3,
   slug: "css",
   title: "CSS",
   description: "Teste seus conhecimentos em conceitos, operações e melhores práticas do CSS.",

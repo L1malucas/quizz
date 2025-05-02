@@ -1,7 +1,7 @@
 import { Quiz } from "@/utils/interfaces";
 
 export const reactQuiz: Quiz = {
-  id: 5,
+  id: 9,
   slug: "react",
   title: "React",
   description: "Teste seus conhecimentos sobre React, abrangendo conceitos básicos, intermediários e avançados.",

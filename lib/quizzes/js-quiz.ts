@@ -1,7 +1,7 @@
 import { Quiz } from "@/utils/interfaces";
 
 export const jsQuiz: Quiz = {
-  id: 1,
+  id: 6,
   slug: "js",
   title: "Javascript",
   description: "Teste seus conhecimentos sobre conceitos, operações e melhores práticas do Javascript.",

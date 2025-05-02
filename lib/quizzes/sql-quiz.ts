@@ -1,7 +1,7 @@
 import { Quiz } from "@/utils/interfaces";
 
 export const sqlQuiz: Quiz =   {
-  id: 1,
+  id: 8,
   slug: "sql",
   title: "SQL Quiz",
   description: "Teste seus conhecimentos sobre conceitos, operações e melhores práticas do SQL.",

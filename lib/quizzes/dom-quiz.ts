@@ -1,7 +1,7 @@
 import { Quiz } from "@/utils/interfaces";
 
 export const domQuiz: Quiz = {
-  id: 1,
+  id: 4,
   slug: "dom",
   title: "DOM",
   description: "Teste seu conhecimento sobre conceitos, operações e melhores práticas do DOM.",

@@ -17,7 +17,7 @@ export default function RankingPage() {
         </div>
 
         <Tabs defaultValue="all" className="w-full">
-          <TabsList className="grid grid-cols-4 md:grid-cols-3 mb-8">
+          <TabsList className="grid grid-cols-3 md:grid-cols-3 mb-8">
             <TabsTrigger value="all">Todos os Quizzes</TabsTrigger>
             <TabsTrigger value="ai-challenge">Desafio IA</TabsTrigger>
             <TabsTrigger value="recent">Recentes</TabsTrigger>

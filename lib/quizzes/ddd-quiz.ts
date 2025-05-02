@@ -1,7 +1,7 @@
 import { Quiz } from "@/utils/interfaces";
 
 export const frameworksQuiz: Quiz = {
-  id: 3,
+  id: 12,
   slug: "frameworks",
   title: "Práticas de Desenvolvimento",	  
   description: "Teste seus conhecimentos sobre DDD, SOLID, TDD, Clean Code e Design Patterns.",

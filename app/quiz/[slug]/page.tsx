@@ -10,7 +10,6 @@ import ResultPage from "@/components/result-page"
 export default function QuizContainer({ params }: { params: { slug: string } }) {
   const router = useRouter()
   const { slug } = params
-
   const [page, setPage] = useState<"welcome" | "quiz" | "result">("welcome")
   const [score, setScore] = useState(0)
   const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -18,22 +17,18 @@ export default function QuizContainer({ params }: { params: { slug: string } }) 
   const [timer, setTimer] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
 
-  // Find the quiz data based on the slug
   const quizData = quizzes.find((quiz) => quiz.slug === slug)
 
   useEffect(() => {
-    // If quiz doesn't exist, redirect to home
     if (!quizData) {
       router.push("/")
       return
     }
 
-    // Initialize the quiz state
     setSelectedAnswers(Array(quizData.questions.length).fill(null))
-    setTimer(quizData.timeLimit * 60) // Convert minutes to seconds
+    setTimer(quizData.timeLimit * 60) 
   }, [quizData, router])
 
-  // If quiz data is not found, show loading or redirect
   if (!quizData) {
     return <div className="min-h-screen bg-black text-white flex items-center justify-center">Loading...</div>
   }
@@ -46,23 +41,18 @@ export default function QuizContainer({ params }: { params: { slug: string } }) 
     const finalScore = Math.round((correctAnswers / quizData.questions.length) * 100)
     setScore(finalScore)
 
-    // Save score to localStorage
     saveScoreToLocalStorage(finalScore)
   }
 
   const saveScoreToLocalStorage = (finalScore: number) => {
     try {
-      // Get existing scores or initialize empty object
       const existingScores = JSON.parse(localStorage.getItem("quizScores") || "{}")
-
-      // Update the score for this quiz
+      console.log("existingScores", existingScores);
       existingScores[slug] = {
         score: finalScore,
         date: new Date().toISOString(),
         title: quizData.title,
       }
-
-      // Save back to localStorage
       localStorage.setItem("quizScores", JSON.stringify(existingScores))
     } catch (error) {
       console.error("Error saving score to localStorage:", error)
@@ -147,6 +137,7 @@ export default function QuizContainer({ params }: { params: { slug: string } }) 
           questions={quizData.questions}
           onRestart={restartQuiz}
           onHome={goToHome}
+          quizId={slug}
         />
       )}
     </div>

@@ -1,7 +1,7 @@
-import type { Quiz } from "@/lib/quiz-data"
+import { Quiz } from "@/utils/interfaces";
 
 export const mongodbQuiz: Quiz =   {
-  id: 1,
+  id: 5,
   slug: "mongodb",
   title: "MongoDB",
   description: "Teste seus conhecimentos sobre conceitos, operações e melhores práticas do MongoDB.",

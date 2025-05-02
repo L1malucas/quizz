@@ -1,7 +1,7 @@
 import { Quiz } from "@/utils/interfaces";
 
 export const angularQuiz: Quiz = {
-  id: 5,
+  id: 10,
   slug: "angular",
   title: "Angular",
   description: "Teste seus conhecimentos sobre Angular, abrangendo conceitos básicos, intermediários e avançados.",
