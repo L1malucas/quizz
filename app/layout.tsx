@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import OfflineSyncManager from "@/components/sync-manager"
+import Footer from "@/components/footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -22,11 +23,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} min-h-screen bg-black text-white`}>
+    <html lang="pt-br" suppressHydrationWarning>
+      <body className={`${inter.className} min-h-screen bg-black text-white flex flex-col`}>
         <ThemeProvider attribute="class" defaultTheme="dark">
           <Navbar />
-          <main>{children}</main>
+          <main className="flex-grow pb-20">{children}</main>
+          <Footer />
           <OfflineSyncManager />
         </ThemeProvider>
       </body>

@@ -78,6 +78,7 @@ export default function HomePage() {
               </Button>
             </CardFooter>
           </Card>
+          <br /><br /><br />
         </div>
       </div>
     </div>

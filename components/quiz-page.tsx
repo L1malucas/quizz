@@ -59,12 +59,10 @@ export default function QuizPage({
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black">
       <div className="w-full max-w-4xl p-6 bg-zinc-900 rounded-lg shadow-lg">
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex flex-col gap-4 mb-6">
           <h1 className="text-2xl font-bold text-purple-500">{quizTitle}</h1>
           <div className="flex items-center gap-4">
-            <Button onClick={onQuit} variant="destructive" className="px-4 py-2">
-              Sair
-            </Button>
+
             <Button
               onClick={onFinish}
               variant="outline"
