@@ -34,7 +34,7 @@ export default function QuizCard({ title, description, icon, questionsCount, tim
       </CardHeader>
       <CardContent>
         <div className="flex justify-between text-sm mb-2">
-          <span className="text-gray-400">Questões:</span>
+          <span className="text-gray-400">Questões Disponíveis:</span>
           <span>{questionsCount}</span>
         </div>
         <div className="flex justify-between text-sm">

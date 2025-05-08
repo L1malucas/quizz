@@ -6,11 +6,11 @@ import { quizzes } from "@/lib/quiz-data"
 import WelcomePage from "@/components/welcome-page"
 import QuizPage from "@/components/quiz-page"
 import ResultPage from "@/components/result-page"
-import { use } from "react" // Import use from React
+import { use } from "react"
 
 export default function QuizContainer({ params }: { params: Promise<{ slug: string }> }) {
   const router = useRouter()
-  const { slug } = use(params) // Unwrap params using React.use
+  const { slug } = use(params)
   const [page, setPage] = useState<"welcome" | "quiz" | "result">("welcome")
   const [score, setScore] = useState(0)
   const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -48,7 +48,6 @@ export default function QuizContainer({ params }: { params: Promise<{ slug: stri
   const saveScoreToLocalStorage = (finalScore: number) => {
     try {
       const existingScores = JSON.parse(localStorage.getItem("quizScores") || "{}")
-      console.log("existingScores", existingScores)
       existingScores[slug] = {
         score: finalScore,
         date: new Date().toISOString(),
@@ -84,6 +83,11 @@ export default function QuizContainer({ params }: { params: Promise<{ slug: stri
       calculateScore()
       setPage("result")
     }
+  }
+
+  const handleFinish = () => {
+    calculateScore()
+    setPage("result")
   }
 
   const togglePause = () => {
@@ -128,6 +132,7 @@ export default function QuizContainer({ params }: { params: Promise<{ slug: stri
           onNext={navigateToNextQuestion}
           onTogglePause={togglePause}
           onQuit={quitTest}
+          onFinish={handleFinish}
         />
       )}
 

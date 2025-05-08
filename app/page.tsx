@@ -42,10 +42,10 @@ export default function HomePage() {
               </div>
             </CardContent>
             <CardFooter>
-              <p>Em breve...</p>
-              {/* <Link href="/ai-quiz" className="w-full">
+              {/* <p>Em breve...</p> */}
+              <Link href="/ai-quiz" className="w-full">
                 <Button className="w-full bg-purple-600 hover:bg-purple-700">Iniciar Desafio IA</Button>
-              </Link> */}
+              </Link>
             </CardFooter>
           </Card>
         </div>

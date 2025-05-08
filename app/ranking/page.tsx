@@ -74,6 +74,8 @@ async function GlobalRanking() {
             score={score.score}
             quizTitle={score.quizTitle}
             date={new Date(score.date)}
+            questionsAnswered={score.questionsAnswered}
+            correctAnswers={score.correctAnswers}
           />
         ))}
       </div>
@@ -103,6 +105,8 @@ async function QuizRanking({ quizId, quizTitle }: { quizId: string; quizTitle: s
             score={score.score}
             quizTitle={score.quizTitle}
             date={new Date(score.date)}
+            questionsAnswered={score.questionsAnswered}
+            correctAnswers={score.correctAnswers}
           />
         ))}
       </div>
@@ -133,6 +137,8 @@ async function RecentScores() {
             score={score.score}
             quizTitle={score.quizTitle}
             date={new Date(score.date)}
+            questionsAnswered={score.questionsAnswered}
+            correctAnswers={score.correctAnswers}
             showRank={false}
           />
         ))}
@@ -147,6 +153,8 @@ function RankingItem({
   score,
   quizTitle,
   date,
+  questionsAnswered,
+  correctAnswers,
   showRank = true,
 }: {
   rank?: number
@@ -154,6 +162,8 @@ function RankingItem({
   score: number
   quizTitle: string
   date: Date
+  questionsAnswered?: number
+  correctAnswers?: number
   showRank?: boolean
 }) {
   const formatDate = (date: Date) => {
@@ -193,6 +203,10 @@ function RankingItem({
             <div>
               <p className="font-bold text-lg">{username}</p>
               <p className="text-sm text-gray-400">{quizTitle}</p>
+              <p className="text-sm text-gray-400">
+                Respondidas: {questionsAnswered !== undefined ? questionsAnswered : "N/A"}
+                {questionsAnswered !== undefined && correctAnswers !== undefined ? `, Corretas: ${correctAnswers}` : ""}
+              </p>
             </div>
             <div className="text-right">
               <p className="text-2xl font-bold text-purple-500">{score}%</p>

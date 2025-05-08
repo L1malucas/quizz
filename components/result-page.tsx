@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ResultPageProps } from "@/utils/interfaces"
 import UsernameModal from "./username-modal"
+import { useRouter } from "next/navigation"
 
 export default function ResultPage({
   quizTitle,
@@ -13,6 +14,7 @@ export default function ResultPage({
   onHome,
   quizId
 }: ResultPageProps) {
+  const router = useRouter()
   const [showUsernameModal, setShowUsernameModal] = useState(true)
   const isPassing = score >= 25
 
@@ -79,7 +81,12 @@ export default function ResultPage({
           </Button>
 
           <Button
-            onClick={() => setShowUsernameModal(true)}
+            onClick={() => {
+              setShowUsernameModal(true)
+              router.push("/ranking")
+            }
+
+            }
             className="w-1/3 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold"
           >
             Ranking
@@ -92,7 +99,9 @@ export default function ResultPage({
           quizId={quizId}
           quizTitle={quizTitle}
           score={score}
-          onClose={() => setShowUsernameModal(false)}
+          onClose={() => {
+            setShowUsernameModal(false)
+          }}
           questionsAnswered={questionsAnswered}
           correctAnswers={correctAnswers}
         />

@@ -1,67 +1,1 @@
-import { GoogleGenAI } from "@google/genai";
-
-export interface AIQuestion {
-  question: string;
-  options: string[];
-  correctAnswerIndex: number;
-}
-
-const genAI = new GoogleGenAI({ apiKey: process.env.GOOGLE_GEMINI_API || "" });
-
-export async function generateAIQuestion(topic = ""): Promise<AIQuestion> {
-  const topicPrompt = topic ? `about ${topic}` : "on any programming or technology topic";
-
-  try {
-    const response = await genAI.models.generateContent({
-      model: "gemini-2.0-flash",
-      contents: `Generate a multiple-choice quiz question ${topicPrompt}. 
-      
-      The question should be challenging but fair, with 4 possible answers where only one is correct.
-      
-      Format your response as a JSON object with the following structure:
-      {
-        "question": "The question text goes here?",
-        "options": ["Option A", "Option B", "Option C", "Option D"],
-        "correctAnswerIndex": 0 // Index of the correct answer (0-3)
-      }
-      
-      Only return the JSON object in ptbr, nothing else.`
-    });
-
-    let responseText = response.text || '';
-    
-    if (responseText.includes("```json")) {
-      const jsonMatch = responseText.match(/```json\s*([\s\S]*?)\s*```/);
-      if (jsonMatch && jsonMatch[1]) {
-        responseText = jsonMatch[1];
-      }
-    }
-    
-    responseText = responseText.trim();
-    
-    const questionData = JSON.parse(responseText);
-
-    if (
-      !questionData.question ||
-      !Array.isArray(questionData.options) ||
-      questionData.options.length !== 4 ||
-      typeof questionData.correctAnswerIndex !== "number"
-    ) {
-      throw new Error("Invalid question format received from AI");
-    }
-
-    return questionData as AIQuestion;
-  } catch (error) {
-    console.error("Erro ao gerar questão IA:", error);
-    return {
-      question: "Qual é o principal propósito do hook useEffect no React?",
-      options: [
-        "Criar novas variáveis de estado",
-        "Executar efeitos colaterais em componentes funcionais",
-        "Otimizar o desempenho da renderização",
-        "Definir props do componente",
-      ],
-      correctAnswerIndex: 1,
-    };
-  }
-}
+import { GoogleGenAI } from "@google/genai";export interface AIQuestion {  question: string;  options: string[];  correctAnswerIndex: number;}export interface QuestionHistory {  questions: string[];  maxHistoryLength: number;}class QuestionHistoryManager {  private history: QuestionHistory;  constructor(maxHistoryLength = 50) {    this.history = {      questions: [],      maxHistoryLength    };  }  addQuestion(question: string): void {    this.history.questions.push(question);    if (this.history.questions.length > this.history.maxHistoryLength) {      this.history.questions.shift();     }  }  getHistory(): string[] {    return this.history.questions;  }  questionExists(question: string): boolean {    return this.history.questions.some(q =>       this.calculateSimilarity(q.toLowerCase(), question.toLowerCase()) > 0.7    );  }  private calculateSimilarity(str1: string, str2: string): number {    const distance = this.levenshteinDistance(str1, str2);    const maxLength = Math.max(str1.length, str2.length);    return maxLength === 0 ? 1 : 1 - distance / maxLength;  }  private levenshteinDistance(str1: string, str2: string): number {    const m = str1.length;    const n = str2.length;    const dp: number[][] = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));    for (let i = 0; i <= m; i++) dp[i][0] = i;    for (let j = 0; j <= n; j++) dp[0][j] = j;    for (let i = 1; i <= m; i++) {      for (let j = 1; j <= n; j++) {        const cost = str1[i - 1] === str2[j - 1] ? 0 : 1;        dp[i][j] = Math.min(          dp[i - 1][j] + 1,                dp[i][j - 1] + 1,                dp[i][j - 1] + cost            );      }    }    return dp[m][n];  }  clearHistory(): void {    this.history.questions = [];  }}const historyManager = new QuestionHistoryManager();const genAI = new GoogleGenAI({ apiKey:"AIzaSyAQVoUysMa67apO5IbvUKi1NvZAvj-KX-s" });export async function generateAIQuestion(topic = ""): Promise<AIQuestion> {  const topicPrompt = topic ? `sobre ${topic}` : "sobre qualquer tópico de programação ou tecnologia";  const questionHistory = historyManager.getHistory();  const historyPrompt = questionHistory.length > 0     ? `Aqui estão perguntas que já foram geradas anteriormente, NÃO gere perguntas similares a essas:      ${questionHistory.slice(-20).map((q, i) => `${i+1}. ${q}`).join('\n')}`     : "";  try {    let attempts = 0;    const maxAttempts = 3;    while (attempts < maxAttempts) {      const response = await genAI.models.generateContent({        model: "gemini-1.5-flash",        contents: `Gere uma pergunta de múltipla escolha para um quiz ${topicPrompt}.        A pergunta deve ser desafiadora mas justa, com 4 possíveis respostas onde apenas uma é correta. A pergunta e todas as opções devem estar diretamente relacionadas ao tópico escolhido de ciência da computação. Não inclua perguntas ou opções relacionadas a qualquer outro assunto.        ${historyPrompt}        Formate sua resposta como um objeto JSON com a seguinte estrutura:        {          "question": "O texto da pergunta vai aqui?",          "options": ["Opção A", "Opção B", "Opção C", "Opção D"],          "correctAnswerIndex": 0         }        Retorne apenas o objeto JSON em português brasileiro, nada mais.`,      });      let responseText = response.text || '';      if (responseText.includes("```json")) {        const jsonMatch = responseText.match(/```json\s*([\s\S]*?)\s*```/);        if (jsonMatch && jsonMatch[1]) {          responseText = jsonMatch[1];        }      }      responseText = responseText.trim();      const questionData = JSON.parse(responseText);      if (        !questionData.question ||        !Array.isArray(questionData.options) ||        questionData.options.length !== 4 ||        typeof questionData.correctAnswerIndex !== "number"      ) {        throw new Error("Formato de pergunta inválido recebido da IA");      }      if (!historyManager.questionExists(questionData.question)) {        historyManager.addQuestion(questionData.question);        return questionData as AIQuestion;      }      attempts++;    }    const fallbackTopic = ["algoritmos", "estruturas de dados", "redes", "segurança", "inteligência artificial"][Math.floor(Math.random() * 5)];    return generateAIQuestion(fallbackTopic);  } catch (error) {    console.error("Erro ao gerar questão IA:", error);    return {      question: "Qual é o principal propósito do hook useEffect no React?",      options: [        "Criar novas variáveis de estado",        "Executar efeitos colaterais em componentes funcionais",        "Otimizar o desempenho da renderização",        "Definir props do componente",      ],      correctAnswerIndex: 1,    };  }}export function clearQuestionHistory(): void {  historyManager.clearHistory();}export function getQuestionHistory(): string[] {  return historyManager.getHistory();}

@@ -35,6 +35,8 @@ export interface QuizPageProps {
   onNext: () => void
   onTogglePause: () => void
   onQuit: () => void
+  onFinish: () => void;
+
 }
 
 export interface QuizCardProps {
