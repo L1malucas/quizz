@@ -6,10 +6,11 @@ import { quizzes } from "@/lib/quiz-data"
 import WelcomePage from "@/components/welcome-page"
 import QuizPage from "@/components/quiz-page"
 import ResultPage from "@/components/result-page"
+import { use } from "react" // Import use from React
 
-export default function QuizContainer({ params }: { params: { slug: string } }) {
+export default function QuizContainer({ params }: { params: Promise<{ slug: string }> }) {
   const router = useRouter()
-  const { slug } = params
+  const { slug } = use(params) // Unwrap params using React.use
   const [page, setPage] = useState<"welcome" | "quiz" | "result">("welcome")
   const [score, setScore] = useState(0)
   const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -26,7 +27,7 @@ export default function QuizContainer({ params }: { params: { slug: string } }) 
     }
 
     setSelectedAnswers(Array(quizData.questions.length).fill(null))
-    setTimer(quizData.timeLimit * 60) 
+    setTimer(quizData.timeLimit * 60)
   }, [quizData, router])
 
   if (!quizData) {
@@ -47,7 +48,7 @@ export default function QuizContainer({ params }: { params: { slug: string } }) 
   const saveScoreToLocalStorage = (finalScore: number) => {
     try {
       const existingScores = JSON.parse(localStorage.getItem("quizScores") || "{}")
-      console.log("existingScores", existingScores);
+      console.log("existingScores", existingScores)
       existingScores[slug] = {
         score: finalScore,
         date: new Date().toISOString(),

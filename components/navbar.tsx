@@ -13,7 +13,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-xl font-bold text-purple-500">
-            Quiz Central
+            Quiz v1.0.1
           </Link>
 
           <div className="flex space-x-1">

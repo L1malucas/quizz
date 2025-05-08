@@ -3,7 +3,7 @@ import { Quiz } from "@/utils/interfaces";
 export const logicQuiz: Quiz =   {
   id: 1,
   slug: "logic",
-  title: "Lógica de Programação",
+  title: "Lógica",
   description: "Teste seus conhecimentos sobre conceitos, operações e melhores práticas de lógica.",
   timeLimit: 12,
   questions:[

@@ -18,7 +18,7 @@ export default function RankingPage() {
 
         <Tabs defaultValue="all" className="w-full">
           <TabsList className="grid grid-cols-3 md:grid-cols-3 mb-8">
-            <TabsTrigger value="all">Todos os Quizzes</TabsTrigger>
+            <TabsTrigger value="all">Todos os Quizz</TabsTrigger>
             <TabsTrigger value="ai-challenge">Desafio IA</TabsTrigger>
             <TabsTrigger value="recent">Recentes</TabsTrigger>
           </TabsList>
@@ -66,7 +66,7 @@ async function GlobalRanking() {
   return (
     <div>
       <div className="grid gap-4">
-        {scores.map((score, index) => (
+        {scores.map((score: any, index: any) => (
           <RankingItem
             key={index}
             rank={index + 1}
@@ -95,7 +95,7 @@ async function QuizRanking({ quizId, quizTitle }: { quizId: string; quizTitle: s
   return (
     <div>
       <div className="grid gap-4">
-        {scores.map((score, index) => (
+        {scores.map((score: any, index: any) => (
           <RankingItem
             key={index}
             rank={index + 1}

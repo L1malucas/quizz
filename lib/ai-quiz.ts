@@ -1,5 +1,4 @@
-import { generateText } from "ai";
-import { createOpenAI } from "@ai-sdk/openai";
+import { GoogleGenAI } from "@google/genai";
 
 export interface AIQuestion {
   question: string;
@@ -7,17 +6,15 @@ export interface AIQuestion {
   correctAnswerIndex: number;
 }
 
-// Create OpenAI client with proper API key configuration
-const openai = createOpenAI({
-  apiKey: process.env.OPENAI_API_KEY });
+const genAI = new GoogleGenAI({ apiKey: process.env.GOOGLE_GEMINI_API || "" });
 
 export async function generateAIQuestion(topic = ""): Promise<AIQuestion> {
   const topicPrompt = topic ? `about ${topic}` : "on any programming or technology topic";
 
   try {
-    const { text } = await generateText({
-      model: openai("gpt-4o"),
-      prompt: `Generate a multiple-choice quiz question ${topicPrompt}. 
+    const response = await genAI.models.generateContent({
+      model: "gemini-2.0-flash",
+      contents: `Generate a multiple-choice quiz question ${topicPrompt}. 
       
       The question should be challenging but fair, with 4 possible answers where only one is correct.
       
@@ -28,14 +25,22 @@ export async function generateAIQuestion(topic = ""): Promise<AIQuestion> {
         "correctAnswerIndex": 0 // Index of the correct answer (0-3)
       }
       
-      Only return the JSON object in ptbr, nothing else.`,
-      temperature: 0.7,
+      Only return the JSON object in ptbr, nothing else.`
     });
 
-    // Parse the response as JSON
-    const questionData = JSON.parse(text);
+    let responseText = response.text || '';
+    
+    if (responseText.includes("```json")) {
+      const jsonMatch = responseText.match(/```json\s*([\s\S]*?)\s*```/);
+      if (jsonMatch && jsonMatch[1]) {
+        responseText = jsonMatch[1];
+      }
+    }
+    
+    responseText = responseText.trim();
+    
+    const questionData = JSON.parse(responseText);
 
-    // Validate the response structure
     if (
       !questionData.question ||
       !Array.isArray(questionData.options) ||
@@ -59,4 +64,4 @@ export async function generateAIQuestion(topic = ""): Promise<AIQuestion> {
       correctAnswerIndex: 1,
     };
   }
-} 
+}
