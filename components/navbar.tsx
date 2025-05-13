@@ -4,16 +4,17 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Home, Brain, BarChart, Trophy } from "lucide-react"
+import packageJson from '../package.json';
 
 export default function Navbar() {
   const pathname = usePathname()
-
+  const VERSION = packageJson.version;
   return (
     <nav className="fixed top-0 left-0 right-0 bg-zinc-950/80 backdrop-blur-sm border-b border-zinc-800 z-10">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-xl font-bold text-purple-500">
-            Quiz v1.0.1
+            Quiz v{VERSION}
           </Link>
 
           <div className="flex space-x-1">

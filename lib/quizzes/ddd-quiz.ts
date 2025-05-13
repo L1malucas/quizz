@@ -3,61 +3,24 @@ import { Quiz } from "@/utils/interfaces";
 export const frameworksQuiz: Quiz = {
   id: 12,
   slug: "frameworks",
-  title: "Práticas de Desenvolvimento",	  
+  title: "Práticas de Desenvolvimento",
   description: "Teste seus conhecimentos sobre DDD, SOLID, TDD, Clean Code e Design Patterns.",
   timeLimit: 18,
   questions: [
-    // Iniciante (20 questões)
     {
       id: 1,
-      question: "O que significa a sigla DDD?",
+      question: "No Clean Code, o que é o princípio YAGNI?",
       options: [
-        "Domain Driven Design",
-        "Data Driven Design",
-        "Domain Driven Development",
-        "Data Driven Development"
+        "You Aren't Gonna Need It, evitar código desnecessário",
+        "You Always Get New Issues, aceitar bugs",
+        "You Are Getting New Ideas, adicionar funcionalidades",
+        "You Always Gain New Insights, refatorar sempre"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 2,
-      question: "Qual é o princípio SOLID que diz que uma classe deve ter apenas uma razão para mudar?",
-      options: [
-        "Single Responsibility",
-        "Open/Closed",
-        "Liskov Substitution",
-        "Interface Segregation"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 3,
-      question: "O que significa TDD?",
-      options: [
-        "Test Driven Development",
-        "Test Data Development",
-        "Type Driven Development",
-        "Task Driven Development"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 4,
-      question: "No Clean Code, qual é a recomendação sobre nomes de variáveis?",
-      options: [
-        "Usar nomes curtos e genéricos",
-        "Usar nomes longos e descritivos",
-        "Usar apenas números",
-        "Usar abreviações sempre"
-      ],
-      correctAnswer: 1,
-      correctLetter: "B"
-    },
-    {
-      id: 5,
       question: "Qual padrão de projeto é usado para criar objetos sem especificar a classe exata?",
       options: [
         "Factory Method",
@@ -66,10 +29,22 @@ export const frameworksQuiz: Quiz = {
         "Decorator"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
-      id: 6,
+      id: 3,
+      question: "Em TDD, o que é um teste de aceitação?",
+      options: [
+        "Teste que valida requisitos do usuário",
+        "Teste de desempenho",
+        "Teste de unidade",
+        "Teste de integração"
+      ],
+      correctAnswer: 0,
+      correctLetter: "D"
+    },
+    {
+      id: 4,
       question: "No DDD, o que é um Aggregate?",
       options: [
         "Um grupo de objetos tratados como uma unidade",
@@ -81,127 +56,43 @@ export const frameworksQuiz: Quiz = {
       correctLetter: "A"
     },
     {
-      id: 7,
-      question: "Qual princípio SOLID fala sobre herança correta entre classes?",
+      id: 5,
+      question: "No Clean Code, qual é a recomendação sobre nomes de variáveis?",
       options: [
-        "Liskov Substitution",
-        "Dependency Inversion",
-        "Single Responsibility",
-        "Open/Closed"
+        "Usar nomes curtos e genéricos",
+        "Usar nomes longos e descritivos",
+        "Usar apenas números",
+        "Usar abreviações sempre"
+      ],
+      correctAnswer: 1,
+      correctLetter: "C"
+    },
+    {
+      id: 6,
+      question: "Qual padrão de projeto é usado para definir uma estrutura padrão para um algoritmo?",
+      options: [
+        "Template Method",
+        "Strategy",
+        "State",
+        "Command"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
+    },
+    {
+      id: 7,
+      question: "No DDD, como os Bounded Contexts se relacionam em um sistema grande?",
+      options: [
+        "Por integração via Context Mapping",
+        "Por herança direta",
+        "Por testes unitários",
+        "Por banco de dados compartilhado"
+      ],
+      correctAnswer: 0,
+      correctLetter: "D"
     },
     {
       id: 8,
-      question: "Em TDD, qual é a sequência correta do ciclo?",
-      options: [
-        "Escrever teste, escrever código, refatorar",
-        "Escrever código, testar, refatorar",
-        "Refatorar, testar, escrever código",
-        "Testar, refatorar, escrever código"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 9,
-      question: "No Clean Code, funções devem idealmente:",
-      options: [
-        "Ter muitas responsabilidades",
-        "Ser pequenas e fazer uma coisa",
-        "Ter nomes genéricos",
-        "Ser longas e complexas"
-      ],
-      correctAnswer: 1,
-      correctLetter: "B"
-    },
-    {
-      id: 10,
-      question: "Qual padrão de projeto garante uma única instância de uma classe?",
-      options: [
-        "Singleton",
-        "Adapter",
-        "Facade",
-        "Strategy"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 11,
-      question: "No DDD, o que é um Bounded Context?",
-      options: [
-        "Um limite definido onde um modelo é consistente",
-        "Um tipo de banco de dados",
-        "Um padrão de projeto",
-        "Um teste automatizado"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 12,
-      question: "Qual princípio SOLID diz que classes devem ser abertas para extensão, mas fechadas para modificação?",
-      options: [
-        "Open/Closed",
-        "Single Responsibility",
-        "Interface Segregation",
-        "Dependency Inversion"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 13,
-      question: "Em TDD, o que significa um teste 'vermelho'?",
-      options: [
-        "O teste falhou",
-        "O teste passou",
-        "O código está incompleto",
-        "O teste está desatualizado"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 14,
-      question: "No Clean Code, qual é a importância de comentários?",
-      options: [
-        "Devem explicar código óbvio",
-        "Devem ser evitados ou explicar intenções",
-        "Devem ser usados em todas as linhas",
-        "Devem ser longos e detalhados"
-      ],
-      correctAnswer: 1,
-      correctLetter: "B"
-    },
-    {
-      id: 15,
-      question: "Qual padrão de projeto permite adicionar funcionalidades a um objeto dinamicamente?",
-      options: [
-        "Decorator",
-        "Proxy",
-        "Composite",
-        "Bridge"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 16,
-      question: "No DDD, o que é uma Entity?",
-      options: [
-        "Um objeto com identidade única",
-        "Um banco de dados",
-        "Um teste unitário",
-        "Um padrão de projeto"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 17,
       question: "Qual princípio SOLID fala sobre depender de abstrações, não de implementações concretas?",
       options: [
         "Dependency Inversion",
@@ -213,43 +104,149 @@ export const frameworksQuiz: Quiz = {
       correctLetter: "A"
     },
     {
-      id: 18,
-      question: "Em TDD, o que significa um teste 'verde'?",
+      id: 9,
+      question: "Em TDD, o que é um teste 'vermelho'?",
       options: [
-        "O teste passou",
         "O teste falhou",
+        "O teste passou",
         "O código está incompleto",
         "O teste está desatualizado"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
-      id: 19,
-      question: "No Clean Code, qual é a recomendação sobre tratamento de erros?",
+      id: 10,
+      question: "No Clean Code, o que é 'code smell'?",
       options: [
-        "Ignorar erros sempre",
-        "Usar try-catch de forma clara e específica",
-        "Misturar erros com lógica de negócios",
-        "Usar códigos de erro numéricos"
+        "Indícios de problemas no design do código",
+        "Código otimizado",
+        "Código com alta performance",
+        "Código sem testes"
       ],
-      correctAnswer: 1,
+      correctAnswer: 0,
       correctLetter: "B"
     },
     {
-      id: 20,
-      question: "Qual padrão de projeto é usado para notificar mudanças de estado a múltiplos objetos?",
+      id: 11,
+      question: "Qual padrão de projeto garante uma única instância de uma classe?",
       options: [
-        "Observer",
-        "Mediator",
-        "Command",
-        "Chain of Responsibility"
+        "Singleton",
+        "Adapter",
+        "Facade",
+        "Strategy"
+      ],
+      correctAnswer: 0,
+      correctLetter: "D"
+    },
+    {
+      id: 12,
+      question: "No DDD, o que é um Bounded Context?",
+      options: [
+        "Um limite definido onde um modelo é consistente",
+        "Um tipo de banco de dados",
+        "Um padrão de projeto",
+        "Um teste automatizado"
       ],
       correctAnswer: 0,
       correctLetter: "A"
     },
-
-    // Intermediário (30 questões)
+    {
+      id: 13,
+      question: "Qual princípio SOLID diz que classes devem ser abertas para extensão, mas fechadas para modificação?",
+      options: [
+        "Open/Closed",
+        "Single Responsibility",
+        "Interface Segregation",
+        "Dependency Inversion"
+      ],
+      correctAnswer: 0,
+      correctLetter: "C"
+    },
+    {
+      id: 14,
+      question: "Em TDD, o que é Behavior Driven Development (BDD)?",
+      options: [
+        "Uma extensão de TDD focada em comportamento do sistema",
+        "Um tipo de teste de performance",
+        "Um padrão de projeto",
+        "Uma técnica de refatoração"
+      ],
+      correctAnswer: 0,
+      correctLetter: "B"
+    },
+    {
+      id: 15,
+      question: "No Clean Code, qual é a importância de comentários?",
+      options: [
+        "Devem explicar código óbvio",
+        "Devem ser evitados ou explicar intenções",
+        "Devem ser usados em todas as linhas",
+        "Devem ser longos e detalhados"
+      ],
+      correctAnswer: 1,
+      correctLetter: "D"
+    },
+    {
+      id: 16,
+      question: "Qual padrão de projeto permite adicionar funcionalidades a um objeto dinamicamente?",
+      options: [
+        "Decorator",
+        "Proxy",
+        "Composite",
+        "Bridge"
+      ],
+      correctAnswer: 0,
+      correctLetter: "A"
+    },
+    {
+      id: 17,
+      question: "No DDD, o que é uma Entity?",
+      options: [
+        "Um objeto com identidade única",
+        "Um banco de dados",
+        "Um teste unitário",
+        "Um padrão de projeto"
+      ],
+      correctAnswer: 0,
+      correctLetter: "C"
+    },
+    {
+      id: 18,
+      question: "Qual princípio SOLID fala sobre herança correta entre classes?",
+      options: [
+        "Liskov Substitution",
+        "Dependency Inversion",
+        "Single Responsibility",
+        "Open/Closed"
+      ],
+      correctAnswer: 0,
+      correctLetter: "B"
+    },
+    {
+      id: 19,
+      question: "Em TDD, qual é a sequência correta do ciclo?",
+      options: [
+        "Escrever teste, escrever código, refatorar",
+        "Escrever código, testar, refatorar",
+        "Refatorar, testar, escrever código",
+        "Testar, refatorar, escrever código"
+      ],
+      correctAnswer: 0,
+      correctLetter: "D"
+    },
+    {
+      id: 20,
+      question: "No Clean Code, funções devem idealmente:",
+      options: [
+        "Ter muitas responsabilidades",
+        "Ser pequenas e fazer uma coisa",
+        "Ter nomes genéricos",
+        "Ser longas e complexas"
+      ],
+      correctAnswer: 1,
+      correctLetter: "A"
+    },
     {
       id: 21,
       question: "No DDD, qual é o papel de um Repository?",
@@ -260,7 +257,7 @@ export const frameworksQuiz: Quiz = {
         "Gerenciar transações HTTP"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 22,
@@ -272,7 +269,7 @@ export const frameworksQuiz: Quiz = {
         "Usando variáveis globais"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 23,
@@ -284,7 +281,7 @@ export const frameworksQuiz: Quiz = {
         "Escrever novos testes"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 24,
@@ -308,7 +305,7 @@ export const frameworksQuiz: Quiz = {
         "Proxy"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 26,
@@ -320,7 +317,7 @@ export const frameworksQuiz: Quiz = {
         "Value Object é persistido, Entity não"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 27,
@@ -332,7 +329,7 @@ export const frameworksQuiz: Quiz = {
         "Aumenta a coesão das funções"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 28,
@@ -356,7 +353,7 @@ export const frameworksQuiz: Quiz = {
         "Elimina a necessidade de testes"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 30,
@@ -368,7 +365,7 @@ export const frameworksQuiz: Quiz = {
         "Strategy"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 31,
@@ -380,7 +377,7 @@ export const frameworksQuiz: Quiz = {
         "Criar interfaces gráficas"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 32,
@@ -404,7 +401,7 @@ export const frameworksQuiz: Quiz = {
         "Para garantir 100% de cobertura"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 34,
@@ -416,7 +413,7 @@ export const frameworksQuiz: Quiz = {
         "Código em produção"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 35,
@@ -428,7 +425,7 @@ export const frameworksQuiz: Quiz = {
         "Template Method"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 36,
@@ -452,7 +449,7 @@ export const frameworksQuiz: Quiz = {
         "Maior reusabilidade"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 38,
@@ -464,7 +461,7 @@ export const frameworksQuiz: Quiz = {
         "Um banco de dados"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 39,
@@ -476,7 +473,7 @@ export const frameworksQuiz: Quiz = {
         "Porque é obrigatório"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 40,
@@ -500,7 +497,7 @@ export const frameworksQuiz: Quiz = {
         "Um padrão de projeto"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 42,
@@ -512,7 +509,7 @@ export const frameworksQuiz: Quiz = {
         "Aumenta a coesão"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 43,
@@ -524,7 +521,7 @@ export const frameworksQuiz: Quiz = {
         "Complexidade do código"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 44,
@@ -548,7 +545,7 @@ export const frameworksQuiz: Quiz = {
         "Bridge"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 46,
@@ -560,7 +557,7 @@ export const frameworksQuiz: Quiz = {
         "Elimina testes"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 47,
@@ -572,7 +569,7 @@ export const frameworksQuiz: Quiz = {
         "Menor manutenção"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 48,
@@ -596,7 +593,7 @@ export const frameworksQuiz: Quiz = {
         "Para evitar comentários"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 50,
@@ -608,72 +605,10 @@ export const frameworksQuiz: Quiz = {
         "Abstract Factory"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
-
-    // Avançado (20 questões)
     {
       id: 51,
-      question: "No DDD, como os Bounded Contexts se relacionam em um sistema grande?",
-      options: [
-        "Por integração via Context Mapping",
-        "Por herança direta",
-        "Por testes unitários",
-        "Por banco de dados compartilhado"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 52,
-      question: "Como o princípio Open/Closed pode ser violado em um sistema legado?",
-      options: [
-        "Modificando classes existentes para novas funcionalidades",
-        "Usando interfaces",
-        "Aplicando polimorfismo",
-        "Criando testes unitários"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 53,
-      question: "Em TDD, o que é um teste de aceitação?",
-      options: [
-        "Teste que valida requisitos do usuário",
-        "Teste de desempenho",
-        "Teste de unidade",
-        "Teste de integração"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 54,
-      question: "No Clean Code, o que é 'code smell'?",
-      options: [
-        "Indícios de problemas no design do código",
-        "Código otimizado",
-        "Código com alta performance",
-        "Código sem testes"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 55,
-      question: "Qual padrão de projeto é mais adequado para gerenciar estados complexos de um objeto?",
-      options: [
-        "State",
-        "Strategy",
-        "Command",
-        "Mediator"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 56,
       question: "No DDD, como os Domain Events ajudam na integração entre Bounded Contexts?",
       options: [
         "Permitem comunicação assíncrona de eventos relevantes",
@@ -682,10 +617,10 @@ export const frameworksQuiz: Quiz = {
         "Criando herança entre contextos"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
-      id: 57,
+      id: 52,
       question: "Como o princípio Liskov Substitution pode ser violado?",
       options: [
         "Quando uma subclasse altera o comportamento esperado da superclasse",
@@ -697,16 +632,76 @@ export const frameworksQuiz: Quiz = {
       correctLetter: "A"
     },
     {
-      id: 58,
-      question: "Em TDD, o que é Behavior Driven Development (BDD)?",
+      id: 53,
+      question: "Em TDD, o que é um teste de regressão?",
       options: [
-        "Uma extensão de TDD focada em comportamento do sistema",
-        "Um tipo de teste de performance",
-        "Um padrão de projeto",
-        "Uma técnica de refatoração"
+        "Teste que garante que novas mudanças não quebram funcionalidades existentes",
+        "Teste de performance",
+        "Teste de interface",
+        "Teste de unidade"
+      ],
+      correctAnswer: 0,
+      correctLetter: "C"
+    },
+    {
+      id: 54,
+      question: "No Clean Code, o que é o princípio KISS?",
+      options: [
+        "Keep It Simple, Stupid, manter o código simples",
+        "Keep It Short, Stupid, manter o código curto",
+        "Keep It Safe, Stupid, manter o código seguro",
+        "Keep It Smart, Stupid, manter o código esperto"
+      ],
+      correctAnswer: 0,
+      correctLetter: "B"
+    },
+    {
+      id: 55,
+      question: "Qual padrão de projeto é usado para criar famílias de objetos relacionados?",
+      options: [
+        "Abstract Factory",
+        "Factory Method",
+        "Builder",
+        "Prototype"
+      ],
+      correctAnswer: 0,
+      correctLetter: "D"
+    },
+    {
+      id: 56,
+      question: "No DDD, como os Aggregates garantem consistência?",
+      options: [
+        "Controlando todas as mudanças através do Aggregate Root",
+        "Usando herança",
+        "Evitando testes",
+        "Criando interfaces"
       ],
       correctAnswer: 0,
       correctLetter: "A"
+    },
+    {
+      id: 57,
+      question: "Como o princípio Single Responsibility impacta a coesão de uma classe?",
+      options: [
+        "Aumenta a coesão ao focar em uma única responsabilidade",
+        "Reduz a coesão",
+        "Não afeta a coesão",
+        "Elimina a coesão"
+      ],
+      correctAnswer: 0,
+      correctLetter: "C"
+    },
+    {
+      id: 58,
+      question: "Em TDD, o que é um teste de ponta a ponta (end-to-end)?",
+      options: [
+        "Teste que valida todo o fluxo do sistema",
+        "Teste de unidade",
+        "Teste de performance",
+        "Teste de integração"
+      ],
+      correctAnswer: 0,
+      correctLetter: "B"
     },
     {
       id: 59,
@@ -718,7 +713,7 @@ export const frameworksQuiz: Quiz = {
         "Do Review Yourself, revisar código"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 60,
@@ -742,7 +737,7 @@ export const frameworksQuiz: Quiz = {
         "Maior performance"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 62,
@@ -754,22 +749,82 @@ export const frameworksQuiz: Quiz = {
         "Aumenta a coesão"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 63,
-      question: "Em TDD, o que é um teste de regressão?",
+      question: "Em TDD, o que significa TDD?",
       options: [
-        "Teste que garante que novas mudanças não quebram funcionalidades existentes",
-        "Teste de performance",
-        "Teste de interface",
-        "Teste de unidade"
+        "Test Driven Development",
+        "Test Data Development",
+        "Type Driven Development",
+        "Task Driven Development"
+      ],
+      correctAnswer: 0,
+      correctLetter: "D"
+    },
+    {
+      id: 64,
+      question: "No Clean Code, qual é a recomendação sobre tratamento de erros?",
+      options: [
+        "Ignorar erros sempre",
+        "Usar try-catch de forma clara e específica",
+        "Misturar erros com lógica de negócios",
+        "Usar códigos de erro numéricos"
+      ],
+      correctAnswer: 1,
+      correctLetter: "A"
+    },
+    {
+      id: 65,
+      question: "Qual padrão de projeto é usado para notificar mudanças de estado a múltiplos objetos?",
+      options: [
+        "Observer",
+        "Mediator",
+        "Command",
+        "Chain of Responsibility"
+      ],
+      correctAnswer: 0,
+      correctLetter: "C"
+    },
+    {
+      id: 66,
+      question: "No DDD, o que significa a sigla DDD?",
+      options: [
+        "Domain Driven Design",
+        "Data Driven Design",
+        "Domain Driven Development",
+        "Data Driven Development"
+      ],
+      correctAnswer: 0,
+      correctLetter: "B"
+    },
+    {
+      id: 67,
+      question: "Qual princípio SOLID que diz que uma classe deve ter apenas uma razão para mudar?",
+      options: [
+        "Single Responsibility",
+        "Open/Closed",
+        "Liskov Substitution",
+        "Interface Segregation"
+      ],
+      correctAnswer: 0,
+      correctLetter: "D"
+    },
+    {
+      id: 68,
+      question: "Em TDD, o que significa um teste 'verde'?",
+      options: [
+        "O teste passou",
+        "O teste falhou",
+        "O código está incompleto",
+        "O teste está desatualizado"
       ],
       correctAnswer: 0,
       correctLetter: "A"
     },
     {
-      id: 64,
+      id: 69,
       question: "No Clean Code, o que é o princípio KISS?",
       options: [
         "Keep It Simple, Stupid, manter o código simples",
@@ -778,79 +833,19 @@ export const frameworksQuiz: Quiz = {
         "Keep It Smart, Stupid, manter o código esperto"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 65,
-      question: "Qual padrão de projeto é usado para criar famílias de objetos relacionados?",
-      options: [
-        "Abstract Factory",
-        "Factory Method",
-        "Builder",
-        "Prototype"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 66,
-      question: "No DDD, como os Aggregates garantem consistência?",
-      options: [
-        "Controlando todas as mudanças através do Aggregate Root",
-        "Usando herança",
-        "Evitando testes",
-        "Criando interfaces"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 67,
-      question: "Como o princípio Single Responsibility impacta a coesão de uma classe?",
-      options: [
-        "Aumenta a coesão ao focar em uma única responsabilidade",
-        "Reduz a coesão",
-        "Não afeta a coesão",
-        "Elimina a coesão"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 68,
-      question: "Em TDD, o que é um teste de ponta a ponta (end-to-end)?",
-      options: [
-        "Teste que valida todo o fluxo do sistema",
-        "Teste de unidade",
-        "Teste de performance",
-        "Teste de integração"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
-    },
-    {
-      id: 69,
-      question: "No Clean Code, o que é o princípio YAGNI?",
-      options: [
-        "You Aren't Gonna Need It, evitar código desnecessário",
-        "You Always Get New Issues, aceitar bugs",
-        "You Are Getting New Ideas, adicionar funcionalidades",
-        "You Always Gain New Insights, refatorar sempre"
-      ],
-      correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 70,
-      question: "Qual padrão de projeto é usado para definir uma estrutura padrão para um algoritmo?",
+      question: "Qual padrão de projeto é mais adequado para gerenciar estados complexos de um objeto?",
       options: [
-        "Template Method",
-        "Strategy",
         "State",
-        "Command"
+        "Strategy",
+        "Command",
+        "Mediator"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     }
   ]
 }

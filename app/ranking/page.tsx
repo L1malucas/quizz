@@ -79,6 +79,7 @@ async function GlobalRanking() {
           />
         ))}
       </div>
+      <br /><br /><br />
     </div>
   )
 }

@@ -4,610 +4,608 @@ export const angularQuiz: Quiz = {
   id: 10,
   slug: "angular",
   title: "Angular",
-  description: "Teste seus conhecimentos sobre Angular, abrangendo conceitos básicos, intermediários e avançados.",
+  description: "Teste seus conhecimentos sobre Angular, abrangendo conceitos fundamentais, intermediários e avançados do framework.",
   timeLimit: 15,
   questions: [
     {
       id: 1,
-      question: "O que é Angular?",
+      question: "O que é o motor Ivy no Angular?",
       options: [
-        "Um framework JavaScript para construção de aplicações web",
-        "Uma biblioteca para manipulação de DOM",
-        "Uma linguagem de programação",
-        "Um banco de dados"
+        "O compilador e renderizador introduzido na versão 9",
+        "Uma biblioteca de animações",
+        "Um gerenciador de estado",
+        "Um framework de testes"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 2,
-      question: "Qual é a principal linguagem usada no desenvolvimento Angular?",
+      question: "Qual comando do Angular CLI cria um novo projeto?",
       options: [
-        "TypeScript",
-        "JavaScript",
-        "Python",
-        "Java"
+        "ng new meu-projeto",
+        "ng create meu-projeto",
+        "ng init meu-projeto",
+        "ng start meu-projeto"
       ],
       correctAnswer: 0,
       correctLetter: "A"
     },
     {
       id: 3,
-      question: "O que é o Angular CLI?",
+      question: "O que é change detection no Angular?",
       options: [
-        "Uma ferramenta de linha de comando para criar e gerenciar projetos Angular",
-        "Uma biblioteca de componentes",
-        "Um gerenciador de estado",
-        "Um banco de dados"
+        "O processo de atualizar a view com base em mudanças no modelo",
+        "O gerenciamento de rotas dinâmicas",
+        "A validação de dados no backend",
+        "A execução de testes unitários"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 4,
-      question: "Como criar um novo projeto Angular usando o CLI?",
+      question: "Como exibir o valor de uma variável em um template Angular?",
       options: [
-        "ng new nome-do-projeto",
-        "ng create nome-do-projeto",
-        "ng generate nome-do-projeto",
-        "ng build nome-do-projeto"
+        "{{ minhaVariavel }}",
+        "[[ minhaVariavel ]]",
+        "(( minhaVariavel ))",
+        "** minhaVariavel **"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 5,
-      question: "O que é um 'componente' no Angular?",
+      question: "Qual é a função do HttpClient no Angular?",
       options: [
-        "Uma classe TypeScript com um template HTML associado",
-        "Um arquivo CSS",
-        "Um endpoint de API",
-        "Um banco de dados"
+        "Realizar requisições HTTP para APIs externas",
+        "Gerenciar o estado da aplicação",
+        "Renderizar componentes no DOM",
+        "Executar animações no template"
       ],
       correctAnswer: 0,
       correctLetter: "A"
     },
     {
       id: 6,
-      question: "Qual é o decorador usado para definir um componente em Angular?",
+      question: "O que é NgRx no contexto do Angular?",
       options: [
-        "@Component",
-        "@Module",
-        "@Service",
-        "@Directive"
+        "Uma biblioteca para gerenciamento de estado reativo",
+        "Um módulo de roteamento avançado",
+        "Uma ferramenta de compilação",
+        "Uma biblioteca de animações"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 7,
-      question: "O que é 'data binding' no Angular?",
+      question: "Qual é a função de um pipe no Angular?",
       options: [
-        "Sincronização de dados entre o modelo e a view",
-        "Gerenciamento de rotas",
-        "Validação de formulários",
-        "Teste de componentes"
+        "Transformar dados exibidos no template",
+        "Gerenciar eventos de usuário",
+        "Configurar rotas dinâmicas",
+        "Executar testes unitários"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 8,
-      question: "Qual é o tipo de data binding que atualiza a view quando o modelo muda?",
+      question: "Como otimizar a change detection em Angular?",
       options: [
-        "One-way binding (property binding)",
-        "Two-way binding",
-        "Event binding",
-        "Interpolation"
+        "Usando ChangeDetectionStrategy.OnPush e dados imutáveis",
+        "Usando ngIf em todos os componentes",
+        "Carregando todos os serviços no bootstrap",
+        "Evitando o uso de Observables"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 9,
-      question: "Como criar um componente usando o Angular CLI?",
+      question: "Qual é a função do Angular CLI?",
       options: [
-        "ng generate component nome-do-componente",
-        "ng create component nome-do-componente",
-        "ng build component nome-do-componente",
-        "ng test component nome-do-componente"
+        "Automatizar a criação, build e testes de projetos Angular",
+        "Gerenciar dependências de backend",
+        "Criar animações para componentes",
+        "Executar consultas a bancos de dados"
       ],
       correctAnswer: 0,
       correctLetter: "A"
     },
     {
       id: 10,
-      question: "O que é um 'NgModule' no Angular?",
+      question: "Como criar um formulário reativo em Angular?",
       options: [
-        "Um decorador para organizar e configurar módulos",
-        "Um componente de UI",
-        "Um serviço de backend",
-        "Um tipo de teste"
+        "Usando FormGroup e FormControl no componente",
+        "Usando ngModel no template",
+        "Usando diretivas estruturais",
+        "Usando pipes de validação"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 11,
-      question: "Qual é o módulo raiz padrão em uma aplicação Angular?",
+      question: "O que caracteriza o framework Angular?",
       options: [
-        "AppModule",
-        "RootModule",
-        "MainModule",
-        "CoreModule"
+        "Um framework TypeScript para desenvolvimento de aplicações web dinâmicas",
+        "Uma biblioteca para manipulação direta do DOM",
+        "Uma linguagem de programação para backend",
+        "Um sistema de gerenciamento de banco de dados"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 12,
-      question: "O que é o 'bootstrap' em um NgModule?",
+      question: "Qual é o papel do RxJS no Angular?",
       options: [
-        "O componente inicial que é carregado na inicialização",
-        "Um serviço de backend",
-        "Um tipo de teste",
-        "Um arquivo CSS"
+        "Facilitar a programação reativa com Observables",
+        "Gerenciar rotas dinâmicas",
+        "Compilar templates em tempo real",
+        "Executar testes unitários"
       ],
       correctAnswer: 0,
       correctLetter: "A"
     },
     {
       id: 13,
-      question: "Como exibir uma variável no template usando interpolação?",
+      question: "Como importar o FormsModule em um NgModule?",
       options: [
-        "{{ variavel }}",
-        "[variavel]",
-        "(variavel)",
-        "*variavel"
+        "imports: [FormsModule]",
+        "declarations: [FormsModule]",
+        "exports: [FormsModule]",
+        "providers: [FormsModule]"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 14,
-      question: "O que é uma 'diretiva' no Angular?",
+      question: "O que é uma diretiva em Angular?",
       options: [
         "Um comportamento ou manipulação aplicada a elementos do DOM",
-        "Um componente de UI",
-        "Um serviço de backend",
-        "Um tipo de teste"
+        "Um componente de interface gráfica",
+        "Um serviço para chamadas HTTP",
+        "Um módulo de configuração global"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 15,
-      question: "Qual é a diretiva usada para repetir elementos em uma lista?",
+      question: "Qual pipe Angular é usado para formatar datas?",
       options: [
-        "*ngFor",
-        "*ngIf",
-        "*ngSwitch",
-        "*ngModel"
+        "date",
+        "formatDate",
+        "time",
+        "datetime"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 16,
-      question: "Como condicionalmente exibir um elemento no template?",
+      question: "O que define um componente em Angular?",
       options: [
-        "Usando *ngIf",
-        "Usando *ngFor",
-        "Usando *ngSwitch",
-        "Usando *ngModel"
+        "Uma classe TypeScript associada a um template HTML e estilos",
+        "Um módulo de roteamento",
+        "Um serviço de injeção de dependências",
+        "Um arquivo de configuração global"
       ],
       correctAnswer: 0,
       correctLetter: "A"
     },
     {
       id: 17,
-      question: "O que é um 'pipe' no Angular?",
+      question: "Como configurar roteamento em uma aplicação Angular?",
       options: [
-        "Uma maneira de transformar dados no template",
-        "Um gerenciador de estado",
-        "Um mecanismo de roteamento",
-        "Uma ferramenta de teste"
+        "Usando RouterModule e definindo rotas com path e component",
+        "Usando serviços de navegação",
+        "Usando diretivas no template",
+        "Usando pipes para redirecionamento"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 18,
-      question: "Qual é o pipe usado para formatar datas no Angular?",
+      question: "O que é o RouterOutlet no Angular?",
       options: [
-        "date",
-        "currency",
-        "uppercase",
-        "json"
+        "Um marcador que renderiza o componente da rota ativa",
+        "Um serviço de navegação",
+        "Uma diretiva de validação",
+        "Um pipe de transformação"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 19,
-      question: "Como importar o 'FormsModule' em um NgModule?",
+      question: "Qual linguagem é usada como base para desenvolvimento em Angular?",
       options: [
-        "imports: [FormsModule]",
-        "declarations: [FormsModule]",
-        "providers: [FormsModule]",
-        "exports: [FormsModule]"
+        "TypeScript",
+        "JavaScript",
+        "Python",
+        "C#"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 20,
-      question: "O que é o 'ng serve' no Angular CLI?",
+      question: "O que é data binding no contexto do Angular?",
       options: [
-        "Um comando para iniciar um servidor de desenvolvimento",
-        "Um comando para gerar componentes",
-        "Um comando para testar a aplicação",
-        "Um comando para construir a aplicação"
+        "Sincronização automática entre o modelo de dados e a interface do usuário",
+        "Validação de formulários no backend",
+        "Gerenciamento de rotas dinâmicas",
+        "Compilação de templates em tempo real"
       ],
       correctAnswer: 0,
       correctLetter: "A"
     },
-    // Intermediate Questions (20)
     {
       id: 21,
-      question: "O que é 'dependency injection' no Angular?",
+      question: "Qual decorador é utilizado para declarar um componente em Angular?",
       options: [
-        "Um padrão para fornecer dependências a classes",
-        "Um mecanismo de roteamento",
-        "Uma ferramenta de teste",
-        "Uma biblioteca de animações"
+        "@Component",
+        "@NgModule",
+        "@Injectable",
+        "@Directive"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 22,
-      question: "Como criar um serviço no Angular usando o CLI?",
+      question: "Como criar um pipe personalizado no Angular?",
       options: [
-        "ng generate service nome-do-servico",
-        "ng create service nome-do-servico",
-        "ng build service nome-do-servico",
-        "ng test service nome-do-servico"
+        "Usando @Pipe e implementando PipeTransform",
+        "Usando @Directive no componente",
+        "Usando @Injectable no serviço",
+        "Usando @NgModule no módulo"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 23,
-      question: "O que é o 'HttpClient' no Angular?",
+      question: "O que é lazy loading no contexto do Angular?",
       options: [
-        "Um serviço para fazer requisições HTTP",
-        "Um componente de UI",
-        "Um tipo de teste",
-        "Um gerenciador de estado"
+        "Carregar módulos sob demanda para reduzir o tempo de inicialização",
+        "Carregar todos os componentes ao iniciar a aplicação",
+        "Usar serviços para gerenciar estado",
+        "Compilar templates em tempo real"
       ],
       correctAnswer: 0,
       correctLetter: "A"
     },
     {
       id: 24,
-      question: "Como importar o 'HttpClientModule' em um NgModule?",
+      question: "Qual é a função do NgZone no Angular?",
       options: [
-        "imports: [HttpClientModule]",
-        "declarations: [HttpClientModule]",
-        "providers: [HttpClientModule]",
-        "exports: [HttpClientModule]"
+        "Controlar a execução de código fora da detecção de mudanças",
+        "Gerenciar rotas dinâmicas",
+        "Renderizar componentes no DOM",
+        "Executar requisições HTTP"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 25,
-      question: "O que é 'RxJS' no contexto do Angular?",
+      question: "Como implementar lazy loading em rotas Angular?",
       options: [
-        "Uma biblioteca para programação reativa",
-        "Uma ferramenta de roteamento",
-        "Uma biblioteca de testes",
-        "Uma biblioteca de animações"
+        "Usando loadChildren no RouterModule",
+        "Usando ngIf no template",
+        "Usando serviços de navegação",
+        "Usando pipes no roteador"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 26,
-      question: "O que é um 'Observable' no RxJS?",
+      question: "Qual comando gera um novo componente com o Angular CLI?",
       options: [
-        "Um objeto que emite dados ao longo do tempo",
-        "Um componente de UI",
-        "Um tipo de teste",
-        "Um gerenciador de estado"
+        "ng generate component meu-componente",
+        "ng create component meu-componente",
+        "ng make component meu-componente",
+        "ng build component meu-componente"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 27,
-      question: "Como implementar roteamento no Angular?",
+      question: "O que é um resolver no roteamento Angular?",
       options: [
-        "Usando o módulo 'RouterModule'",
-        "Usando apenas componentes",
-        "Usando eventos globais",
-        "Usando apenas serviços"
+        "Um serviço que carrega dados antes de ativar uma rota",
+        "Um componente de interface gráfica",
+        "Uma diretiva de validação",
+        "Um pipe de transformação"
       ],
       correctAnswer: 0,
       correctLetter: "A"
     },
     {
       id: 28,
-      question: "Como definir uma rota no Angular?",
+      question: "Como otimizar a performance de uma aplicação Angular?",
       options: [
-        "Usando o array 'routes' com objetos { path, component }",
-        "Usando apenas templates",
-        "Usando apenas serviços",
-        "Usando apenas pipes"
+        "Usando AOT, lazy loading e change detection OnPush",
+        "Carregando todos os módulos no bootstrap",
+        "Usando ngFor em listas grandes",
+        "Evitando o uso de pipes"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 29,
-      question: "O que é o 'RouterOutlet' no Angular?",
+      question: "O que é Angular Universal?",
       options: [
-        "Um componente que exibe o conteúdo da rota atual",
-        "Um serviço de roteamento",
-        "Um tipo de teste",
-        "Um gerenciador de estado"
+        "Uma solução para renderização no lado do servidor",
+        "Uma biblioteca de componentes visuais",
+        "Um framework de testes unitários",
+        "Um gerenciador de estado global"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 30,
-      question: "Como passar parâmetros em uma rota no Angular?",
+      question: "Qual é a função do TestBed no Angular?",
       options: [
-        "Usando ':param' no caminho da rota",
-        "Usando apenas serviços",
-        "Usando apenas pipes",
-        "Usando apenas templates"
+        "Configurar e testar componentes em um ambiente isolado",
+        "Gerenciar eventos assíncronos",
+        "Renderizar templates no DOM",
+        "Executar requisições HTTP"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 31,
-      question: "O que é 'ReactiveFormsModule' no Angular?",
+      question: "O que é injeção de dependência no Angular?",
       options: [
-        "Um módulo para formulários reativos",
-        "Um módulo para roteamento",
-        "Um módulo para testes",
-        "Um módulo para animações"
+        "Um padrão de design para fornecer serviços a classes automaticamente",
+        "Um mecanismo de roteamento dinâmico",
+        "Uma técnica de otimização de performance",
+        "Um método para validação de formulários"
       ],
       correctAnswer: 0,
       correctLetter: "A"
     },
     {
       id: 32,
-      question: "Como criar um formulário reativo no Angular?",
+      question: "Qual ferramenta é comumente usada para testes unitários em Angular?",
       options: [
-        "Usando FormGroup e FormControl",
-        "Usando apenas templates",
-        "Usando apenas serviços",
-        "Usando apenas pipes"
+        "Jasmine com Karma",
+        "Mocha com Chai",
+        "Jest com Enzyme",
+        "Cypress com Sinon"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 33,
-      question: "O que é um 'guard' no roteamento do Angular?",
+      question: "Como criar uma diretiva personalizada no Angular?",
       options: [
-        "Um serviço que controla o acesso a rotas",
-        "Um componente de UI",
-        "Um tipo de teste",
-        "Um gerenciador de estado"
+        "Usando @Directive e manipulando o elemento do DOM",
+        "Usando @Component no template",
+        "Usando @Injectable no serviço",
+        "Usando @Pipe no módulo"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 34,
-      question: "Qual é o propósito do 'CanActivate' guard?",
+      question: "O que é o ReactiveFormsModule no Angular?",
       options: [
-        "Controlar se uma rota pode ser ativada",
-        "Controlar se uma rota pode ser desativada",
-        "Controlar se um componente pode ser criado",
-        "Controlar se um serviço pode ser injetado"
+        "Um módulo para criar formulários baseados em programação reativa",
+        "Um módulo para animações dinâmicas",
+        "Um módulo para gerenciamento de rotas",
+        "Um módulo para testes unitários"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 35,
-      question: "O que é 'lazy loading' no Angular?",
+      question: "Como exibir condicionalmente um elemento em um template Angular?",
       options: [
-        "Carregar módulos sob demanda para melhorar a performance",
-        "Carregar todos os módulos de uma vez",
-        "Usar mais serviços",
-        "Evitar o uso de pipes"
+        "Com a diretiva *ngIf",
+        "Com a diretiva *ngFor",
+        "Com a diretiva *ngShow",
+        "Com a diretiva *ngHide"
       ],
       correctAnswer: 0,
       correctLetter: "A"
     },
     {
       id: 36,
-      question: "Como implementar 'lazy loading' no Angular?",
+      question: "Qual diretiva Angular é usada para iterar sobre uma lista no template?",
       options: [
-        "Usando loadChildren no roteamento",
-        "Usando apenas templates",
-        "Usando apenas serviços",
-        "Usando apenas pipes"
+        "*ngFor",
+        "*ngIf",
+        "*ngSwitch",
+        "*ngWhile"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 37,
-      question: "O que é um 'resolver' no roteamento do Angular?",
+      question: "O que é compilação AOT no Angular?",
       options: [
-        "Um serviço que pré-carrega dados antes de ativar uma rota",
-        "Um componente de UI",
-        "Um tipo de teste",
-        "Um gerenciador de estado"
+        "Compilar o código Angular antes do carregamento no navegador",
+        "Compilar o código em tempo de execução",
+        "Gerenciar eventos assíncronos",
+        "Validar formulários dinamicamente"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 38,
-      question: "Como testar componentes no Angular?",
+      question: "Como criar um serviço com o Angular CLI?",
       options: [
-        "Usando Jasmine e Karma",
-        "Usando apenas console.log",
-        "Usando ferramentas de build",
-        "Usando apenas TypeScript"
+        "ng generate service meu-servico",
+        "ng create service meu-servico",
+        "ng make service meu-servico",
+        "ng build service meu-servico"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 39,
-      question: "O que é o 'TestBed' no Angular?",
+      question: "Qual é a função de um route guard no Angular?",
       options: [
-        "Uma ferramenta para configurar e testar componentes",
-        "Um componente de UI",
-        "Um tipo de teste",
-        "Um gerenciador de estado"
+        "Proteger o acesso a rotas com base em condições",
+        "Renderizar componentes no DOM",
+        "Gerenciar eventos de usuário",
+        "Transformar dados no template"
       ],
       correctAnswer: 0,
       correctLetter: "A"
     },
     {
       id: 40,
-      question: "Como criar um pipe personalizado no Angular?",
+      question: "O que faz o guard CanActivate no Angular?",
       options: [
-        "Usando o decorador @Pipe e implementando PipeTransform",
-        "Usando apenas templates",
-        "Usando apenas serviços",
-        "Usando apenas componentes"
+        "Verifica se uma rota pode ser acessada",
+        "Valida formulários no template",
+        "Gerencia eventos assíncronos",
+        "Compila templates dinamicamente"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
-    // Advanced Questions (10)
     {
       id: 41,
-      question: "O que é 'Angular Universal'?",
+      question: "Qual é a função de um NgModule no Angular?",
       options: [
-        "Uma tecnologia para renderização no lado do servidor",
-        "Uma biblioteca de componentes",
-        "Um gerenciador de estado",
-        "Uma ferramenta de teste"
+        "Organizar e configurar conjuntos de funcionalidades da aplicação",
+        "Renderizar templates no DOM",
+        "Executar requisições HTTP",
+        "Gerenciar eventos de usuário"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 42,
-      question: "Como otimizar a performance de uma aplicação Angular?",
+      question: "Qual é o nome do módulo raiz padrão em uma aplicação Angular?",
       options: [
-        "Usando lazy loading, AOT e change detection otimizada",
-        "Usando mais serviços",
-        "Usando apenas templates",
-        "Usando apenas pipes"
+        "AppModule",
+        "MainModule",
+        "RootModule",
+        "CoreModule"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 43,
-      question: "O que é 'AOT' (Ahead-of-Time) no Angular?",
+      question: "O que significa 'bootstrap' em um NgModule?",
       options: [
-        "Compilação do código Angular antes da execução no navegador",
-        "Compilação do código durante a execução",
-        "Um tipo de teste",
-        "Um gerenciador de estado"
+        "O processo de inicialização do componente principal da aplicação",
+        "A configuração de rotas iniciais",
+        "A injeção de serviços globais",
+        "A compilação de estilos CSS"
       ],
       correctAnswer: 0,
       correctLetter: "A"
     },
     {
       id: 44,
-      question: "O que é 'change detection' no Angular?",
+      question: "Qual tipo de data binding permite atualização unidirecional do modelo para a view?",
       options: [
-        "O mecanismo que detecta mudanças no modelo e atualiza a view",
-        "O mecanismo que gerencia rotas",
-        "O mecanismo que valida formulários",
-        "O mecanismo que testa componentes"
+        "Property binding",
+        "Two-way binding",
+        "Event binding",
+        "Structural binding"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "C"
     },
     {
       id: 45,
-      question: "Como otimizar a 'change detection' no Angular?",
+      question: "Como importar o HttpClientModule em um NgModule?",
       options: [
-        "Usando OnPush strategy e immutable data",
-        "Usando mais serviços",
-        "Usando apenas templates",
-        "Usando apenas pipes"
+        "imports: [HttpClientModule]",
+        "declarations: [HttpClientModule]",
+        "exports: [HttpClientModule]",
+        "providers: [HttpClientModule]"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 46,
-      question: "O que é 'NgZone' no Angular?",
+      question: "O que define um Observable no RxJS?",
       options: [
-        "Um serviço que gerencia a execução de código fora da zona de detecção de mudanças",
-        "Um componente de UI",
-        "Um tipo de teste",
-        "Um gerenciador de estado"
+        "Um fluxo de dados assíncrono que emite valores ao longo do tempo",
+        "Um componente de interface gráfica",
+        "Um serviço de validação de dados",
+        "Um módulo de configuração global"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     },
     {
       id: 47,
-      question: "Como criar uma diretiva personalizada no Angular?",
+      question: "Como definir uma rota com parâmetros no Angular?",
       options: [
-        "Usando o decorador @Directive e manipulando o DOM",
-        "Usando apenas templates",
-        "Usando apenas serviços",
-        "Usando apenas pipes"
+        "Usando :id no caminho da rota",
+        "Usando query strings no template",
+        "Usando serviços de roteamento",
+        "Usando pipes no roteador"
       ],
       correctAnswer: 0,
       correctLetter: "A"
     },
     {
       id: 48,
-      question: "O que é 'Ivy' no Angular?",
+      question: "Qual é a função do comando 'ng serve' no Angular CLI?",
       options: [
-        "O motor de renderização introduzido na versão 9",
-        "Uma biblioteca de componentes",
-        "Um gerenciador de estado",
-        "Uma ferramenta de teste"
+        "Iniciar um servidor de desenvolvimento local",
+        "Compilar a aplicação para produção",
+        "Gerar novos componentes",
+        "Executar testes unitários"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter:"C"
     },
     {
       id: 49,
-      question: "Como gerenciar estado em uma aplicação Angular?",
+      question: "Qual é uma abordagem comum para gerenciar estado em Angular?",
       options: [
-        "Usando NgRx ou serviços compartilhados",
-        "Usando apenas templates",
-        "Usando apenas pipes",
-        "Usando apenas componentes"
+        "Usar NgRx ou serviços compartilhados",
+        "Usar localStorage para todos os dados",
+        "Usar pipes para estado global",
+        "Usar diretivas para estado local"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "D"
     },
     {
       id: 50,
-      question: "O que é 'NgRx' no Angular?",
+      question: "Como o NgRx implementa o padrão Redux no Angular?",
       options: [
-        "Uma biblioteca para gerenciamento de estado reativo",
-        "Uma ferramenta de roteamento",
-        "Uma biblioteca de testes",
-        "Uma biblioteca de animações"
+        "Usando ações, redutores e store para gerenciar estado",
+        "Usando diretivas para atualizar o DOM",
+        "Usando pipes para transformar estado",
+        "Usando serviços para roteamento"
       ],
       correctAnswer: 0,
-      correctLetter: "A"
+      correctLetter: "B"
     }
   ]
 }
