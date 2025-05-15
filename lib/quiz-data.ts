@@ -11,6 +11,7 @@ import { typescriptQuiz } from "./quizzes/ts-quiz"
 import { angularQuiz } from './quizzes/angular-quiz';
 import { csharpDotnetQuiz } from './quizzes/csharp-quiz';
 import { frameworksQuiz } from './quizzes/ddd-quiz';
+import { az900Quiz } from './quizzes/az900-quizz';
 
 export const quizzes: Quiz[] = [
   logicQuiz,
@@ -24,5 +25,5 @@ export const quizzes: Quiz[] = [
   reactQuiz, 
   angularQuiz,
   csharpDotnetQuiz,
-  frameworksQuiz
+  frameworksQuiz,az900Quiz
 ]

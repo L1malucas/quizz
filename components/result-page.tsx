@@ -12,21 +12,28 @@ export default function ResultPage({
   questions,
   onRestart,
   onHome,
-  quizId
-}: ResultPageProps) {
+  quizId,
+  userAnswers = [] // Default to empty array
+}: ResultPageProps & { userAnswers?: (number | null)[] }) {
   const router = useRouter()
   const [showUsernameModal, setShowUsernameModal] = useState(true)
+  const [hoveredQuestion, setHoveredQuestion] = useState<number | null>(null)
   const isPassing = score >= 25
 
   const questionsAnswered = questions.length
-
-
   const correctAnswers = Math.round((score / 100) * questionsAnswered)
 
   const generateAnswerKey = () => {
-    return questions.map((q, index) => {
-      return `${index + 1}. ${q.correctLetter}`
-    })
+    return questions
+      .map((q, index) => {
+        // Only include questions where the user's answer was incorrect
+        const userAnswer = userAnswers[index]
+        if (userAnswer !== q.correctAnswer && userAnswer !== undefined) {
+          return `${index + 1}. ${q.correctLetter}`
+        }
+        return null
+      })
+      .filter((answer) => answer !== null) as string[]
   }
 
   const answerKey = generateAnswerKey()
@@ -54,14 +61,47 @@ export default function ResultPage({
         )}
 
         <div className="mb-8 bg-zinc-800 p-4 rounded-lg">
-          <h2 className="text-lg font-semibold mb-3 text-purple-400">Gabarito:</h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
-            {answerKey.map((answer, index) => (
-              <div key={index} className="text-center p-1 bg-zinc-700 rounded">
-                {answer}
-              </div>
-            ))}
-          </div>
+          <h2 className="text-lg font-semibold mb-3 text-purple-400">Gabarito (Questões Erradas):</h2>
+          {answerKey.length > 0 ? (
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
+              {answerKey.map((answer, index) => {
+                const questionIndex = parseInt(answer.split(".")[0]) - 1
+                return (
+                  <div
+                    key={index}
+                    className="relative text-center p-1 bg-zinc-700 rounded cursor-pointer"
+                    onMouseEnter={() => setHoveredQuestion(questionIndex)}
+                    onMouseLeave={() => setHoveredQuestion(null)}
+                  >
+                    {answer}
+                    {hoveredQuestion === questionIndex && (
+                      <div className="absolute z-10 w-96 p-4 bg-zinc-800 border border-zinc-700 rounded-lg shadow-lg -top-2 left-1/2 transform -translate-x-1/2 translate-y-[-100%]">
+                        <p className="text-sm font-semibold text-white mb-2">{questions[questionIndex].question}</p>
+                        <ul className="text-sm text-gray-300 mb-2">
+                          {questions[questionIndex].options.map((option, optIndex) => (
+                            <li key={optIndex} className="mb-1">
+                              {String.fromCharCode(65 + optIndex)}. {option}
+                            </li>
+                          ))}
+                        </ul>
+                        <p className="text-sm text-green-400">
+                          Correta: {questions[questionIndex].correctLetter}
+                        </p>
+                        <p className="text-sm text-yellow-400">
+                          Selecionada:{" "}
+                          {userAnswers[questionIndex] !== null && userAnswers[questionIndex] !== undefined
+                            ? String.fromCharCode(65 + userAnswers[questionIndex])
+                            : "Não selecionada"}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          ) : (
+            <p className="text-sm text-gray-400">Parabéns! Você acertou todas as questões.</p>
+          )}
         </div>
 
         <div className="flex gap-4">
@@ -84,9 +124,7 @@ export default function ResultPage({
             onClick={() => {
               setShowUsernameModal(true)
               router.push("/ranking")
-            }
-
-            }
+            }}
             className="w-1/3 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold"
           >
             Ranking
@@ -96,7 +134,7 @@ export default function ResultPage({
 
       {showUsernameModal && (
         <UsernameModal
-          quizId={quizId}
+          quizId={quizId.toString()}
           quizTitle={quizTitle}
           score={score}
           onClose={() => {

@@ -18,9 +18,16 @@ export interface ScoreHistoryProps {
 export interface ResultPageProps {
   quizTitle: string
   score: number
-  questions: QuizQuestion[]
+  questions: {
+    question: string
+    options: string[]
+    correctAnswer: number
+    correctLetter: string
+  }[]
   onRestart: () => void
   onHome: () => void
+  quizId: number
+  userAnswers?: (number | null)[]
 }
 
 export interface QuizPageProps {
@@ -68,10 +75,16 @@ export interface Quiz {
 export interface ResultPageProps {
   quizTitle: string
   score: number
-  questions: QuizQuestion[]
+  questions: {
+    question: string
+    options: string[]
+    correctAnswer: number
+    correctLetter: string
+  }[]
   onRestart: () => void
   onHome: () => void
-  quizId: string
+  quizId: number
+  userAnswers?: (number | null)[] 
 }
 
 export interface UsernameModalProps {
