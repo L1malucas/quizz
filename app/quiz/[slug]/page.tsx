@@ -143,7 +143,7 @@ export default function QuizContainer({ params }: { params: Promise<{ slug: stri
           questions={quizData.questions}
           onRestart={restartQuiz}
           onHome={goToHome}
-          quizId={parseInt(slug)}
+          slug={slug}
           userAnswers={selectedAnswers}
         />
       )}

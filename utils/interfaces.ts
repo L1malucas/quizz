@@ -4,6 +4,11 @@ export interface QuizScore {
   title: string
 }
 
+export interface SaveScoreResponse {
+  success: boolean
+  error?: string
+}
+
 export interface WelcomePageProps {
   quizTitle: string
   timeLimit: number
@@ -13,21 +18,6 @@ export interface WelcomePageProps {
 
 export interface ScoreHistoryProps {
   onClose: () => void
-}
-
-export interface ResultPageProps {
-  quizTitle: string
-  score: number
-  questions: {
-    question: string
-    options: string[]
-    correctAnswer: number
-    correctLetter: string
-  }[]
-  onRestart: () => void
-  onHome: () => void
-  quizId: number
-  userAnswers?: (number | null)[]
 }
 
 export interface QuizPageProps {
@@ -83,12 +73,12 @@ export interface ResultPageProps {
   }[]
   onRestart: () => void
   onHome: () => void
-  quizId: number
+  slug: string
   userAnswers?: (number | null)[] 
 }
 
 export interface UsernameModalProps {
-  quizId: string
+  slug: string
   quizTitle: string
   score: number
   onClose: () => void

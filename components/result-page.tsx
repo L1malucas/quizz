@@ -12,7 +12,7 @@ export default function ResultPage({
   questions,
   onRestart,
   onHome,
-  quizId,
+  slug,
   userAnswers = [] // Default to empty array
 }: ResultPageProps & { userAnswers?: (number | null)[] }) {
   const router = useRouter()
@@ -134,7 +134,7 @@ export default function ResultPage({
 
       {showUsernameModal && (
         <UsernameModal
-          quizId={quizId.toString()}
+          slug={slug}
           quizTitle={quizTitle}
           score={score}
           onClose={() => {

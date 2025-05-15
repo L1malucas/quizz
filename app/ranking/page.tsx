@@ -28,13 +28,7 @@ export default function RankingPage() {
               <GlobalRanking />
             </Suspense>
           </TabsContent>
-
-          <TabsContent value="mongodb">
-            <Suspense fallback={<RankingLoading />}>
-              <QuizRanking quizId="mongodb" quizTitle="MongoDB" />
-            </Suspense>
-          </TabsContent>
-
+          
           <TabsContent value="ai-challenge">
             <Suspense fallback={<RankingLoading />}>
               <QuizRanking quizId="ai-challenge" quizTitle="Desafio IA" />

@@ -5,13 +5,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { saveScore } from "@/lib/actions"
 import { useRouter } from "next/navigation"
-import { UsernameModalProps } from "@/utils/interfaces"
-interface SaveScoreResponse {
-  success: boolean
-  error?: string
-}
+import { SaveScoreResponse, UsernameModalProps } from "@/utils/interfaces"
+
 export default function UsernameModal({
-  quizId,
+  slug,
   quizTitle,
   score,
   onClose,
@@ -50,14 +47,15 @@ export default function UsernameModal({
         questionsAnswered,
         correctAnswers,
       }
-      existingScores[quizId] = newScore
+      existingScores[slug] = newScore
       localStorage.setItem("quizScores", JSON.stringify(existingScores))
       let serverSaveSuccessful = false
       if (!offlineMode) {
         try {
+          console.log("Saving score:", { username, slug, quizTitle, score, date: new Date(), questionsAnswered, correctAnswers }) 
           const result: SaveScoreResponse = await saveScore({
             username,
-            quizId,
+            slug,
             quizTitle,
             score,
             date: new Date(Date.now()),

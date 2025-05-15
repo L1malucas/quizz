@@ -2,11 +2,11 @@
 
 import { revalidatePath } from "next/cache";
 import dbConnect from "./mongodb";
-import { Score, IScore } from "./score";
+import { Score } from "./score";
 
 export interface QuizScore {
   username: string;
-  quizId: string;
+  slug: string;
   quizTitle: string;
   score: number;
   date: Date;
@@ -21,6 +21,7 @@ export async function saveScore(pontuacao: QuizScore) {
     const newScore = await Score.create({
       ...pontuacao,
       date: pontuacao.date || new Date(),
+      quizId: pontuacao.slug
     });
 
     revalidatePath("/ranking");
